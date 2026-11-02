@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Matches | Football View</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="assets/css/app.css" />
+</head>
+
+<body class="bg-slate-50 text-slate-900 page-enter">
+
+  <!-- =========================
+       Navigation Bar
+  ========================== -->
+
+  <header
+    id="navbar"
+    class="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-slate-950/90 backdrop-blur-md transition-shadow duration-300"
+  >
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+
+  <div class="flex items-center justify-between h-20">
+
+    <!-- Logo -->
+
+    <a
+      href="index.html"
+      class="flex items-center gap-3 text-white"
+      aria-label="Football View Home"
+    >
+      <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-500 text-white shadow-lg shadow-emerald-900/30">
+        <svg
+          viewBox="0 0 24 24"
+          class="h-6 w-6"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="m12 7 3 2v3.5l-3 2-3-2V9l3-2Z"></path>
+          <path d="m9 9-3-1.5M15 9l3-1.5M9 14.5l-1 3M15 14.5l1 3M12 14.5V19"></path>
+        </svg>
+      </span>
+
+      <span>
+        <span class="block text-lg font-black tracking-tight">
+          Football View
+        </span>
+
+        <span class="block text-[10px] font-semibold uppercase tracking-[0.22em] text-emerald-400">
+          Kano State
+        </span>
+      </span>
+    </a>
+
+
+    <!-- Desktop Menu -->
+
+    <div class="hidden md:flex items-center gap-8">
+
+      <a
+        href="index.html"
+        class="text-sm font-medium text-slate-300 hover:text-white transition"
+      >
+        Home
+      </a>
+
+      <a
+        href="matches.html"
+        class="text-sm font-semibold text-emerald-400"
+        aria-current="page"
+      >
+        Matches
+      </a>
+
+      <a
+        href="viewing-centers.html"
+        class="text-sm font-medium text-slate-300 hover:text-white transition"
+      >
+        Viewing Centers
+      </a>
+
+      <a
+        href="login.html"
+        class="text-sm font-medium text-slate-300 hover:text-white transition"
+      >
+        Login
+      </a>
+
+      <a
+        href="register.html"
+        class="animated-button rounded-full bg-emerald-500 px-5 py-3 text-sm font-bold text-white"
+      >
+        Register
+      </a>
+
+    </div>
+
+
+    <!-- Mobile Menu Button -->
+
+    <button
+      id="mobileMenuButton"
+      type="button"
+      class="md:hidden rounded-lg p-2 text-white hover:bg-white/10 transition"
+      aria-label="Open navigation menu"
+      aria-controls="mobileMenu"
+      aria-expanded="false"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-7 h-7"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        />
+      </svg>
+    </button>
+
+  </div>
+
+
+  <!-- Mobile Menu -->
+
+  <div
+    id="mobileMenu"
+    class="hidden md:hidden border-t border-white/10 py-5"
+  >
+    <div class="flex flex-col gap-4">
+
+      <a
+        href="index.html"
+        class="text-sm text-slate-300 hover:text-white transition"
+      >
+        Home
+      </a>
+
+      <a
+        href="matches.html"
+        class="text-sm font-semibold text-emerald-400"
+        aria-current="page"
+      >
+        Matches
+      </a>
+
+      <a
+        href="viewing-centers.html"
+        class="text-sm text-slate-300 hover:text-white transition"
+      >
+        Viewing Centers
+      </a>
+
+      <a
+        href="login.html"
+        class="text-sm text-slate-300 hover:text-white transition"
+      >
+        Login
+      </a>
+
+      <a
+        href="register.html"
+        class="inline-block w-fit rounded-full bg-emerald-500 px-5 py-3 text-sm font-bold text-white"
+      >
+        Register
+      </a>
+
+    </div>
+  </div>
+
+</nav>
+
+
+  </header>
+
+  <!-- =========================
+       MATCHES HERO
+  ========================== -->
+
+  <section
+    class="relative min-h-[430px] overflow-hidden bg-slate-950 pt-32 pb-20 text-white"
+  >
+
+
+<!-- Real Football Background -->
+
+<div class="absolute inset-0">
+
+  <img
+    src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=2000&q=90"
+    alt="Football stadium and supporters"
+    class="h-full w-full object-cover"
+  />
+
+  <!-- Dark overlay -->
+
+  <div class="absolute inset-0 bg-slate-950/70"></div>
+
+  <!-- Gradient overlay -->
+
+  <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/70 to-emerald-950/30"></div>
+
+</div>
+
+
+<!-- Animated Stadium Light -->
+
+<div
+  class="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-emerald-400/20 blur-3xl animate-pulse"
+></div>
+
+<div
+  class="absolute -left-32 bottom-0 h-64 w-64 rounded-full bg-emerald-500/10 blur-3xl"
+></div>
+
+
+<!-- Animated Football -->
+
+<div
+  class="floating-football text-white"
+  aria-hidden="true"
+>
+  <svg
+    viewBox="0 0 100 100"
+    class="h-28 w-28 md:h-36 md:w-36"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2"
+  >
+    <circle cx="50" cy="50" r="43"></circle>
+    <path d="m50 31 13 9.5-5 15.5H42l-5-15.5L50 31Z"></path>
+    <path d="M37 40 23 34M63 40l14-6M42 56l-8 14M58 56l8 14M50 31V15"></path>
+    <path d="M23 34c-5 9-7 19-6 29M77 34c5 9 7 19 6 29M34 70c10 7 22 9 32 0"></path>
+  </svg>
+</div>
+
+
+<!-- Decorative SVG -->
+
+<svg
+  class="absolute bottom-0 right-0 h-48 w-96 opacity-10"
+  viewBox="0 0 400 200"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+>
+  <circle
+    cx="320"
+    cy="120"
+    r="75"
+    stroke="white"
+    stroke-width="2"
+  />
+
+  <circle
+    cx="320"
+    cy="120"
+    r="45"
+    stroke="white"
+    stroke-width="1"
+  />
+
+  <path
+    d="M245 120H395"
+    stroke="white"
+    stroke-width="1"
+  />
+
+  <path
+    d="M320 45V195"
+    stroke="white"
+    stroke-width="1"
+  />
+</svg>
+
+
+<!-- Hero Content -->
+
+<div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+  <div class="max-w-3xl page-enter">
+
+    <!-- Breadcrumb -->
+
+    <div class="mb-7 flex items-center gap-2 text-sm text-slate-300">
+
+      <a
+        href="index.html"
+        class="transition hover:text-white"
+      >
+        Home
+      </a>
+
+      <span class="text-emerald-400">/</span>
+
+      <span class="text-white">
+        Matches
+      </span>
+
+    </div>
+
+
+    <!-- Badge -->
+
+    <div
+      class="mb-6 inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium backdrop-blur-md"
+    >
+      <span class="live-dot"></span>
+
+      <span>
+        Matchday across Kano
+      </span>
+    </div>
+
+
+    <!-- Heading -->
+
+    <h1
+      class="text-4xl font-black leading-tight tracking-tight sm:text-5xl lg:text-6xl"
+    >
+      Find the match.
+      <span class="text-emerald-400">
+        Find your center.
+      </span>
+    </h1>
+
+
+    <!-- Description -->
+
+    <p
+      class="mt-6 max-w-2xl text-base leading-8 text-slate-200 sm:text-lg"
+    >
+      Discover football matches and find registered viewing centers
+      where you can watch the action with fellow supporters across
+      Kano State.
+    </p>
+
+
+    <!-- Quick Actions -->
+
+    <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+
+      <a
+        href="#matches"
+        class="animated-button inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-500 px-6 py-3.5 text-sm font-bold text-white hover:bg-emerald-400"
+      >
+        Browse Matches
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+      </a>
+
+
+      <a
+        href="viewing-centers.html"
+        class="inline-flex items-center justify-center rounded-xl border border-white/30 bg-white/10 px-6 py-3.5 text-sm font-bold text-white backdrop-blur-sm transition hover:bg-white/20"
+      >
+        Find Viewing Centers
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- Bottom Decorative Line -->
+
+<div
+  class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-400/70 to-transparent"
+></div>
+
+
+  </section>
+
+  <!-- =========================
+       Search and Filters
+  ========================== -->
+
+  <section class="relative z-10 -mt-8">
+
+
+<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+
+  <div
+    class="rounded-2xl bg-white p-5 shadow-xl shadow-slate-900/10"
+  >
+
+    <div class="grid gap-4 md:grid-cols-3">
+
+      <!-- Search -->
+
+      <div class="md:col-span-2">
+
+        <label
+          for="matchSearch"
+          class="mb-2 block text-sm font-semibold text-slate-700"
+        >
+          Search matches
+        </label>
+
+        <div class="relative">
+
+          <span
+            class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              class="h-5 w-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="m20 20-4-4"></path>
+            </svg>
+          </span>
+
+          <input
+            id="matchSearch"
+            type="search"
+            placeholder="Search by team or competition..."
+            class="w-full rounded-xl border border-slate-200 bg-slate-50 py-3 pl-11 pr-4 text-sm outline-none transition focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10"
+          />
+
+        </div>
+
+      </div>
+
+
+      <!-- Competition Filter -->
+
+      <div>
+
+        <label
+          for="competitionFilter"
+          class="mb-2 block text-sm font-semibold text-slate-700"
+        >
+          Competition
+        </label>
+
+        <select
+          id="competitionFilter"
+          class="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10"
+        >
+          <option value="all">All competitions</option>
+          <option value="Premier League">Premier League</option>
+          <option value="Champions League">Champions League</option>
+          <option value="La Liga">La Liga</option>
+          <option value="Serie A">Serie A</option>
+        </select>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+  </section>
+
+  <!-- =========================
+       Matches Section
+  ========================== -->
+
+  <main
+    id="matches"
+    class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8"
+  >
+
+
+<div class="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+
+  <div>
+
+    <p class="text-sm font-bold uppercase tracking-widest text-emerald-600">
+      Match schedule
+    </p>
+
+    <h2 class="mt-2 text-3xl font-black tracking-tight text-slate-950">
+      Upcoming matches
+    </h2>
+
+    <p class="mt-3 max-w-2xl text-slate-600">
+      Select a match to view available centers and make a booking.
+    </p>
+
+  </div>
+
+  <div
+    id="matchCount"
+    class="rounded-full bg-emerald-50 px-4 py-2 text-sm font-semibold text-emerald-700"
+  >
+    6 matches available
+  </div>
+
+</div>
+
+
+<!-- Match Cards -->
+
+<div
+  id="matchesGrid"
+  class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+>
+
+  <!-- Match Card 1 -->
+
+  <article
+    class="match-card animated-card overflow-hidden rounded-2xl border border-slate-200 bg-white"
+    data-team="Manchester City Arsenal"
+    data-competition="Premier League"
+  >
+
+    <div class="relative h-40 overflow-hidden">
+
+      <img
+        src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=1200&q=85"
+        alt="Football stadium"
+        class="h-full w-full object-cover"
+      />
+
+      <div class="absolute inset-0 bg-slate-950/55"></div>
+
+      <div class="absolute left-4 top-4 flex items-center gap-2">
+
+        <span
+          class="rounded-full bg-red-500 px-3 py-1 text-xs font-bold text-white"
+        >
+          LIVE SOON
+        </span>
+
+      </div>
+
+      <div class="absolute bottom-4 left-4 right-4">
+
+        <p class="text-xs font-semibold uppercase tracking-wider text-emerald-200">
+          Premier League
+        </p>
+
+        <p class="mt-1 text-sm text-white">
+          Saturday, 7:00 PM
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="p-5">
+
+      <div class="flex items-center justify-between gap-3">
+
+        <div class="flex-1 text-center">
+
+          <div class="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-sky-100 text-xl">
+            MC
+          </div>
+
+          <h3 class="font-bold text-slate-900">
+            Manchester City
+          </h3>
+
+        </div>
+
+        <span class="text-sm font-black text-slate-400">
+          VS
+        </span>
+
+        <div class="flex-1 text-center">
+
+          <div class="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-red-100 text-xl">
+            AR
+          </div>
+
+          <h3 class="font-bold text-slate-900">
+            Arsenal
+          </h3>
+
+        </div>
+
+      </div>
+
+      <div class="mt-5 border-t border-slate-100 pt-4">
+
+        <a
+          href="match-details.html"
+          class="animated-button block rounded-xl bg-emerald-600 px-4 py-3 text-center text-sm font-bold text-white hover:bg-emerald-700"
+        >
+          View Match & Centers
+        </a>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <!-- Match Card 2 -->
+
+  <article
+    class="match-card animated-card overflow-hidden rounded-2xl border border-slate-200 bg-white"
+    data-team="Real Madrid Barcelona"
+    data-competition="La Liga"
+  >
+
+    <div class="relative h-40 overflow-hidden">
+
+      <img
+        src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1200&q=85"
+        alt="Football player on a pitch"
+        class="h-full w-full object-cover"
+      />
+
+      <div class="absolute inset-0 bg-slate-950/55"></div>
+
+      <div class="absolute left-4 top-4">
+
+        <span
+          class="rounded-full bg-amber-400 px-3 py-1 text-xs font-bold text-slate-950"
+        >
+          UPCOMING
+        </span>
+
+      </div>
+
+      <div class="absolute bottom-4 left-4 right-4">
+
+        <p class="text-xs font-semibold uppercase tracking-wider text-emerald-200">
+          La Liga
+        </p>
+
+        <p class="mt-1 text-sm text-white">
+          Sunday, 8:00 PM
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="p-5">
+
+      <div class="flex items-center justify-between gap-3">
+
+        <div class="flex-1 text-center">
+
+          <div class="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-slate-100 text-xl">
+            RM
+          </div>
+
+          <h3 class="font-bold text-slate-900">
+            Real Madrid
+          </h3>
+
+        </div>
+
+        <span class="text-sm font-black text-slate-400">
+          VS
+        </span>
+
+        <div class="flex-1 text-center">
+
+          <div class="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-xl">
+            BA
+          </div>
+
+          <h3 class="font-bold text-slate-900">
+            Barcelona
+          </h3>
+
+        </div>
+
+      </div>
+
+      <div class="mt-5 border-t border-slate-100 pt-4">
+
+        <a
+          href="match-details.html"
+          class="animated-button block rounded-xl bg-emerald-600 px-4 py-3 text-center text-sm font-bold text-white hover:bg-emerald-700"
+        >
+          View Match & Centers
+        </a>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <!-- Match Card 3 -->
+
+  <article
+    class="match-card animated-card overflow-hidden rounded-2xl border border-slate-200 bg-white"
+    data-team="Bayern Munich PSG"
+    data-competition="Champions League"
+  >
+
+    <div class="relative h-40 overflow-hidden">
+
+      <img
+        src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1200&q=85"
+        alt="Football stadium at night"
+        class="h-full w-full object-cover"
+      />
+
+      <div class="absolute inset-0 bg-slate-950/55"></div>
+
+      <div class="absolute left-4 top-4">
+
+        <span
+          class="rounded-full bg-emerald-400 px-3 py-1 text-xs font-bold text-emerald-950"
+        >
+          FEATURED
+        </span>
+
+      </div>
+
+      <div class="absolute bottom-4 left-4 right-4">
+
+        <p class="text-xs font-semibold uppercase tracking-wider text-emerald-200">
+          Champions League
+        </p>
+
+        <p class="mt-1 text-sm text-white">
+          Tuesday, 8:00 PM
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="p-5">
+
+      <div class="flex items-center justify-between gap-3">
+
+        <div class="flex-1 text-center">
+
+          <div class="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-red-100 text-xl">
+            BM
+          </div>
+
+          <h3 class="font-bold text-slate-900">
+            Bayern Munich
+          </h3>
+
+        </div>
+
+        <span class="text-sm font-black text-slate-400">
+          VS
+        </span>
+
+        <div class="flex-1 text-center">
+
+          <div class="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-xl">
+            PS
+          </div>
+
+          <h3 class="font-bold text-slate-900">
+            PSG
+          </h3>
+
+        </div>
+
+      </div>
+
+      <div class="mt-5 border-t border-slate-100 pt-4">
+
+        <a
+          href="match-details.html"
+          class="animated-button block rounded-xl bg-emerald-600 px-4 py-3 text-center text-sm font-bold text-white hover:bg-emerald-700"
+        >
+          View Match & Centers
+        </a>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <!-- Match Card 4 -->
+
+  <article
+    class="match-card animated-card overflow-hidden rounded-2xl border border-slate-200 bg-white"
+    data-team="Liverpool Chelsea"
+    data-competition="Premier League"
+  >
+
+    <div class="relative h-40 overflow-hidden">
+
+      <img
+        src="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=1200&q=85"
+        alt="Football fans in a stadium"
+        class="h-full w-full object-cover"
+      />
+
+      <div class="absolute inset-0 bg-slate-950/55"></div>
+
+      <div class="absolute left-4 top-4">
+
+        <span
+          class="rounded-full bg-amber-400 px-3 py-1 text-xs font-bold text-slate-950"
+        >
+          UPCOMING
+        </span>
+
+      </div>
+
+      <div class="absolute bottom-4 left-4 right-4">
+
+        <p class="text-xs font-semibold uppercase tracking-wider text-emerald-200">
+          Premier League
+        </p>
+
+        <p class="mt-1 text-sm text-white">
+          Wednesday, 7:30 PM
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="p-5">
+
+      <div class="flex items-center justify-between gap-3">
+
+        <div class="flex-1 text-center">
+
+          <div class="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-red-100 text-xl">
+            LI
+          </div>
+
+          <h3 class="font-bold text-slate-900">
+            Liverpool
+          </h3>
+
+        </div>
+
+        <span class="text-sm font-black text-slate-400">
+          VS
+        </span>
+
+        <div class="flex-1 text-center">
+
+          <div class="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-xl">
+            CH
+          </div>
+
+          <h3 class="font-bold text-slate-900">
+            Chelsea
+          </h3>
+
+        </div>
+
+      </div>
+
+      <div class="mt-5 border-t border-slate-100 pt-4">
+
+        <a
+          href="match-details.html"
+          class="animated-button block rounded-xl bg-emerald-600 px-4 py-3 text-center text-sm font-bold text-white hover:bg-emerald-700"
+        >
+          View Match & Centers
+        </a>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <!-- Match Card 5 -->
+
+  <article
+    class="match-card animated-card overflow-hidden rounded-2xl border border-slate-200 bg-white"
+    data-team="Inter Milan Juventus"
+    data-competition="Serie A"
+  >
+
+    <div class="relative h-40 overflow-hidden">
+
+      <img
+        src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=1200&q=85"
+        alt="Football match"
+        class="h-full w-full object-cover"
+      />
+
+      <div class="absolute inset-0 bg-slate-950/55"></div>
+
+      <div class="absolute left-4 top-4">
+
+        <span
+          class="rounded-full bg-amber-400 px-3 py-1 text-xs font-bold text-slate-950"
+        >
+          UPCOMING
+        </span>
+
+      </div>
+
+      <div class="absolute bottom-4 left-4 right-4">
+
+        <p class="text-xs font-semibold uppercase tracking-wider text-emerald-200">
+          Serie A
+        </p>
+
+        <p class="mt-1 text-sm text-white">
+          Thursday, 8:00 PM
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="p-5">
+
+      <div class="flex items-center justify-between gap-3">
+
+        <div class="flex-1 text-center">
+
+          <div class="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-xl">
+            IN
+          </div>
+
+          <h3 class="font-bold text-slate-900">
+            Inter Milan
+          </h3>
+
+        </div>
+
+        <span class="text-sm font-black text-slate-400">
+          VS
+        </span>
+
+        <div class="flex-1 text-center">
+
+          <div class="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-slate-100 text-xl">
+            JU
+          </div>
+
+          <h3 class="font-bold text-slate-900">
+            Juventus
+          </h3>
+
+        </div>
+
+      </div>
+
+      <div class="mt-5 border-t border-slate-100 pt-4">
+
+        <a
+          href="match-details.html"
+          class="animated-button block rounded-xl bg-emerald-600 px-4 py-3 text-center text-sm font-bold text-white hover:bg-emerald-700"
+        >
+          View Match & Centers
+        </a>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <!-- Match Card 6 -->
+
+  <article
+    class="match-card animated-card overflow-hidden rounded-2xl border border-slate-200 bg-white"
+    data-team="Barcelona Atletico Madrid"
+    data-competition="La Liga"
+  >
+
+    <div class="relative h-40 overflow-hidden">
+
+      <img
+        src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1200&q=85"
+        alt="Football supporters"
+        class="h-full w-full object-cover"
+      />
+
+      <div class="absolute inset-0 bg-slate-950/55"></div>
+
+      <div class="absolute left-4 top-4">
+
+        <span
+          class="rounded-full bg-amber-400 px-3 py-1 text-xs font-bold text-slate-950"
+        >
+          UPCOMING
+        </span>
+
+      </div>
+
+      <div class="absolute bottom-4 left-4 right-4">
+
+        <p class="text-xs font-semibold uppercase tracking-wider text-emerald-200">
+          La Liga
+        </p>
+
+        <p class="mt-1 text-sm text-white">
+          Friday, 9:00 PM
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="p-5">
+
+      <div class="flex items-center justify-between gap-3">
+
+        <div class="flex-1 text-center">
+
+          <div class="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 text-xl">
+            BA
+          </div>
+
+          <h3 class="font-bold text-slate-900">
+            Barcelona
+          </h3>
+
+        </div>
+
+        <span class="text-sm font-black text-slate-400">
+          VS
+        </span>
+
+        <div class="flex-1 text-center">
+
+          <div class="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-red-100 text-xl">
+            AM
+          </div>
+
+          <h3 class="font-bold text-slate-900">
+            Atletico Madrid
+          </h3>
+
+        </div>
+
+      </div>
+
+      <div class="mt-5 border-t border-slate-100 pt-4">
+
+        <a
+          href="match-details.html"
+          class="animated-button block rounded-xl bg-emerald-600 px-4 py-3 text-center text-sm font-bold text-white hover:bg-emerald-700"
+        >
+          View Match & Centers
+        </a>
+
+      </div>
+
+    </div>
+
+  </article>
+
+</div>
+
+
+<!-- Empty Search Result -->
+
+<div
+  id="emptyState"
+  class="hidden rounded-2xl border border-dashed border-slate-300 bg-white px-6 py-16 text-center"
+>
+
+  <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-600">
+    <svg
+      viewBox="0 0 24 24"
+      class="h-8 w-8"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.8"
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="9"></circle>
+      <path d="m12 7 3 2v3.5l-3 2-3-2V9l3-2Z"></path>
+      <path d="m9 9-3-1.5M15 9l3-1.5M9 14.5l-1 3M15 14.5l1 3M12 14.5V19"></path>
+    </svg>
+  </div>
+
+  <h3 class="mt-5 text-xl font-black text-slate-900">
+    No matches found
+  </h3>
+
+  <p class="mt-2 text-slate-600">
+    Try searching with another team name or competition.
+  </p>
+
+</div>
+
+
+  </main>
+
+  <!-- =========================
+       Call To Action
+  ========================== -->
+
+  <section
+    class="relative overflow-hidden bg-slate-950 py-20 text-white"
+  >
+
+
+<div
+  class="absolute inset-0 opacity-20"
+  style="
+    background-image: url('https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=1600&q=85');
+    background-size: cover;
+    background-position: center;
+  "
+></div>
+
+<div class="relative mx-auto max-w-5xl px-4 text-center">
+
+  <p class="text-sm font-bold uppercase tracking-widest text-emerald-400">
+    Your seat is waiting
+  </p>
+
+  <h2 class="mt-4 text-3xl font-black sm:text-4xl">
+    Watch the game with your people.
+  </h2>
+
+  <p class="mx-auto mt-5 max-w-2xl text-slate-300">
+    Register now to book your place at a registered viewing center in Kano.
+  </p>
+
+  <a
+    href="register.html"
+    class="animated-button mt-8 inline-block rounded-full bg-emerald-500 px-7 py-4 text-sm font-bold text-white"
+  >
+    Create Customer Account
+  </a>
+
+</div>
+
+
+  </section>
+
+  <!-- =========================
+       Footer
+  ========================== -->
+
+  <footer class="bg-slate-950 py-10 text-slate-400">
+
+
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+  <div
+    class="flex flex-col gap-5 border-b border-white/10 pb-8 md:flex-row md:items-center md:justify-between"
+  >
+
+    <div>
+
+      <h3 class="text-lg font-black text-white">
+        Football View
+      </h3>
+
+      <p class="mt-2 text-sm">
+        Connecting football supporters across Kano State.
+      </p>
+
+    </div>
+
+
+    <div class="flex flex-wrap gap-5 text-sm">
+
+      <a
+        href="index.html"
+        class="hover:text-white transition"
+      >
+        Home
+      </a>
+
+      <a
+        href="matches.html"
+        class="text-emerald-400"
+      >
+        Matches
+      </a>
+
+      <a
+        href="viewing-centers.html"
+        class="hover:text-white transition"
+      >
+        Viewing Centers
+      </a>
+
+      <a
+        href="login.html"
+        class="hover:text-white transition"
+      >
+        Login
+      </a>
+
+      <a
+        href="register.html"
+        class="hover:text-white transition"
+      >
+        Register
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <p class="pt-6 text-xs">
+    © 2026 Football View. All rights reserved.
+  </p>
+
+</div>
+
+
+  </footer>
+
+  <!-- =========================
+       Page JavaScript
+  ========================== -->
+
+  <script src="assets/js/app.js"></script>
+
+  <script>
+
+    /* =========================
+       Match Search & Filtering
+    ========================== */
+
+    const matchSearch =
+      document.getElementById("matchSearch");
+
+    const competitionFilter =
+      document.getElementById("competitionFilter");
+
+    const matchCards =
+      document.querySelectorAll("#matchesGrid article");
+
+    const emptyState =
+      document.getElementById("emptyState");
+
+    const matchCount =
+      document.getElementById("matchCount");
+
+
+    function filterMatches() {
+
+      const searchValue =
+        matchSearch.value.toLowerCase().trim();
+
+      const competitionValue =
+        competitionFilter.value;
+
+      let visibleMatches = 0;
+
+
+      matchCards.forEach((card) => {
+
+        const teamName =
+          card.dataset.team.toLowerCase();
+
+        const competition =
+          card.dataset.competition;
+
+
+        const matchesSearch =
+          teamName.includes(searchValue) ||
+          competition.toLowerCase().includes(searchValue);
+
+        const matchesCompetition =
+          competitionValue === "all" ||
+          competition === competitionValue;
+
+
+        if (matchesSearch && matchesCompetition) {
+
+          card.classList.remove("hidden");
+
+          visibleMatches++;
+
+        } else {
+
+          card.classList.add("hidden");
+
+        }
+
+      });
+
+
+      matchCount.textContent =
+        `${visibleMatches} matches available`;
+
+
+      if (visibleMatches === 0) {
+
+        emptyState.classList.remove("hidden");
+
+      } else {
+
+        emptyState.classList.add("hidden");
+
+      }
+
+    }
+
+
+    /* =========================
+       Filter Events
+    ========================== */
+
+    matchSearch.addEventListener(
+      "input",
+      filterMatches
+    );
+
+    competitionFilter.addEventListener(
+      "change",
+      filterMatches
+    );
+
+  </script>
+
+</body>
+</html>

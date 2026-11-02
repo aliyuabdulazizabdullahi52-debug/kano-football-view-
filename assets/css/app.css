@@ -1,0 +1,740 @@
+/* =====================================================
+   FOOTBALL VIEW
+   Kano State Viewing Center Management System
+   Shared Application Styles
+===================================================== */
+
+/* =========================
+   Base
+========================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+/* Prevent accidental horizontal scrolling from animations */
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* =========================
+   Page Entrance Animation
+========================= */
+
+.page-enter {
+  animation: pageEnter 0.8s ease-out both;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   General Reveal Animation
+========================= */
+
+.slide-up {
+  animation: slideUp 0.8s ease-out both;
+}
+
+.slide-up-delay-1 {
+  animation-delay: 0.15s;
+}
+
+.slide-up-delay-2 {
+  animation-delay: 0.3s;
+}
+
+.slide-up-delay-3 {
+  animation-delay: 0.45s;
+}
+
+.slide-up-delay-4 {
+  animation-delay: 0.6s;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   Fade In
+========================= */
+
+.fade-in {
+  animation: fadeIn 0.7s ease-out both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* =========================
+   Hero Background Animation
+========================= */
+
+.hero-background {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      135deg,
+      #064e3b,
+      #047857,
+      #065f46
+    );
+}
+
+.hero-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(255, 255, 255, 0.12),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(255, 255, 255, 0.08),
+      transparent 30%
+    );
+  animation: backgroundPulse 8s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes backgroundPulse {
+  from {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  to {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+/* =========================
+   Hero Image Overlay
+========================= */
+
+.hero-image-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 6, 23, 0.95) 0%,
+      rgba(2, 6, 23, 0.78) 45%,
+      rgba(2, 6, 23, 0.45) 100%
+    );
+  pointer-events: none;
+}
+
+/* =========================
+   Floating Football
+========================= */
+
+.floating-football {
+  position: absolute;
+  right: 8%;
+  top: 18%;
+  z-index: 1;
+  font-size: 100px;
+  opacity: 0.16;
+  animation:
+    footballFloat 5s ease-in-out infinite,
+    footballRotate 18s linear infinite;
+  pointer-events: none;
+  user-select: none;
+}
+
+@keyframes footballFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-25px);
+  }
+}
+
+@keyframes footballRotate {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
+
+/* =========================
+   Small Football Icon
+========================= */
+
+.football-spin {
+  animation: footballSpin 8s linear infinite;
+}
+
+@keyframes footballSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   Card Hover Effects
+========================= */
+
+.animated-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.animated-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 18px 35px rgba(15, 23, 42, 0.12);
+}
+
+/* =========================
+   Match Card Animation
+========================= */
+
+.match-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.match-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow:
+    0 15px 30px rgba(15, 23, 42, 0.12);
+}
+
+/* =========================
+   Center Card Animation
+========================= */
+
+.center-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.center-card:hover {
+  transform: translateY(-7px);
+  box-shadow:
+    0 20px 40px rgba(15, 23, 42, 0.14);
+}
+
+/* =========================
+   Button Animation
+========================= */
+
+.animated-button {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.animated-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  z-index: -1;
+  width: 80%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+
+.animated-button:hover::before {
+  left: 130%;
+}
+
+.animated-button:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 18px rgba(6, 78, 59, 0.25);
+}
+
+.animated-button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* =========================
+   Glass Effect
+========================= */
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* =========================
+   Dark Glass Effect
+========================= */
+
+.dark-glass {
+  background: rgba(2, 6, 23, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* =========================
+   Green Glow
+========================= */
+
+.green-glow {
+  box-shadow:
+    0 0 40px rgba(16, 185, 129, 0.15);
+}
+
+.green-glow-strong {
+  box-shadow:
+    0 0 60px rgba(16, 185, 129, 0.25);
+}
+
+/* =========================
+   Live Indicator
+========================= */
+
+.live-dot {
+  width: 9px;
+  height: 9px;
+  flex-shrink: 0;
+  border-radius: 999px;
+  background: #ef4444;
+  animation: livePulse 1.5s infinite;
+}
+
+@keyframes livePulse {
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(239, 68, 68, 0.6);
+  }
+
+  70% {
+    box-shadow:
+      0 0 0 10px rgba(239, 68, 68, 0);
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}
+
+/* =========================
+   Scrolling Match Banner
+========================= */
+
+.match-marquee {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.match-marquee-content {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 22s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* =========================
+   Navigation
+========================= */
+
+.nav-link {
+  position: relative;
+  transition:
+    color 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -7px;
+  width: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: #10b981;
+  transform: translateX(-50%);
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 70%;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #34d399;
+}
+
+/* =========================
+   Form Focus Effects
+========================= */
+
+input,
+select,
+textarea {
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+/* =========================
+   Custom Focus Accessibility
+========================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(16, 185, 129, 0.45);
+  outline-offset: 3px;
+}
+
+/* =========================
+   Loading / Shimmer Utility
+========================= */
+
+.loading-shimmer {
+  position: relative;
+  overflow: hidden;
+  background: #e2e8f0;
+}
+
+.loading-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.55),
+      transparent
+    );
+  animation: shimmer 1.6s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* =========================
+   Availability Bar
+========================= */
+
+.availability-bar {
+  height: 7px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e2e8f0;
+}
+
+.availability-bar-fill {
+  height: 100%;
+  border-radius: inherit;
+  background:
+    linear-gradient(
+      90deg,
+      #059669,
+      #10b981
+    );
+  transition: width 0.8s ease;
+}
+
+/* =========================
+   Match Detail Pitch Line
+========================= */
+
+.pitch-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(-50%);
+}
+
+.pitch-circle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 90px;
+  height: 90px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* =========================
+   Floating Glow
+========================= */
+
+.floating-glow {
+  animation: floatingGlow 4s ease-in-out infinite;
+}
+
+@keyframes floatingGlow {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: translateY(-12px);
+    opacity: 1;
+  }
+}
+
+/* =========================
+   Pulse Ring
+========================= */
+
+.pulse-ring {
+  position: relative;
+}
+
+.pulse-ring::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: inherit;
+  animation: pulseRing 2s ease-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1.12);
+    opacity: 0;
+  }
+}
+
+/* =========================
+   Smooth Image Zoom
+========================= */
+
+.image-zoom {
+  overflow: hidden;
+}
+
+.image-zoom img {
+  transition:
+    transform 0.6s ease;
+}
+
+.image-zoom:hover img {
+  transform: scale(1.06);
+}
+
+/* =========================
+   Mobile Menu Animation
+========================= */
+
+.mobile-menu {
+  animation: mobileMenuOpen 0.25s ease-out both;
+  transform-origin: top;
+}
+
+@keyframes mobileMenuOpen {
+  from {
+    opacity: 0;
+    transform: scaleY(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+/* =========================
+   SVG Decorative Elements
+========================= */
+
+.svg-decoration {
+  pointer-events: none;
+  user-select: none;
+}
+
+.svg-decoration path,
+.svg-decoration line,
+.svg-decoration circle,
+.svg-decoration rect {
+  vector-effect: non-scaling-stroke;
+}
+
+/* =========================
+   Selection
+========================= */
+
+::selection {
+  background: rgba(16, 185, 129, 0.25);
+  color: #022c22;
+}
+
+/* =========================
+   Scrollbar
+========================= */
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* =========================
+   Accessibility
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =========================
+   Mobile Adjustments
+========================= */
+
+@media (max-width: 640px) {
+  .floating-football {
+    right: -20px;
+    top: 12%;
+    font-size: 70px;
+  }
+
+  .hero-image-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(2, 6, 23, 0.88),
+        rgba(2, 6, 23, 0.72)
+      );
+  }
+
+  .animated-card:hover,
+  .center-card:hover,
+  .match-card:hover {
+    transform: translateY(-3px);
+  }
+}
+
+/* =========================
+   Very Small Screens
+========================= */
+
+@media (max-width: 380px) {
+  .floating-football {
+    right: -28px;
+    font-size: 58px;
+    opacity: 0.1;
+  }
+}

@@ -1,0 +1,1720 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+
+>
+
+  <title>Booking Confirmed | Football View</title>
+
+<meta
+name="description"
+content="Your Football View matchday booking confirmation."
+
+>
+
+<meta
+name="theme-color"
+content="#020617"
+
+>
+
+  <!-- Tailwind CSS -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Shared Application Styles -->
+
+  <link
+    rel="stylesheet"
+    href="assets/css/app.css"
+  >
+</head>
+
+<body class="bg-slate-50 text-slate-900 page-enter">
+
+  <!-- =====================================================
+       NAVBAR
+  ====================================================== -->
+
+  <nav
+    id="navbar"
+    class="fixed top-0 left-0 right-0 z-50 bg-slate-950/90 backdrop-blur-xl border-b border-white/10 transition-all duration-300"
+  >
+
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+  <div class="h-20 flex items-center justify-between">
+
+    <!-- Logo -->
+    <a
+      href="index.html"
+      class="flex items-center gap-3 group"
+    >
+
+      <div
+        class="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-400/20 flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300"
+      >
+
+        <img
+          src="https://icons.iconarchive.com/icons/pictogrammers/material/128/football-icon.png"
+          alt="Football View"
+          class="w-8 h-8 object-contain"
+        >
+
+      </div>
+
+      <div class="leading-none">
+
+        <div
+          class="text-white font-black tracking-[0.18em] text-sm sm:text-base"
+        >
+          FOOTBALL VIEW
+        </div>
+
+        <div
+          class="text-emerald-400 text-[10px] uppercase tracking-[0.28em] mt-1"
+        >
+          Kano State
+        </div>
+
+      </div>
+
+    </a>
+
+
+    <!-- Desktop Navigation -->
+    <div class="hidden lg:flex items-center gap-8">
+
+      <a
+        href="index.html"
+        class="text-sm font-medium text-slate-300 hover:text-white transition"
+      >
+        Home
+      </a>
+
+      <a
+        href="matches.html"
+        class="text-sm font-medium text-slate-300 hover:text-white transition"
+      >
+        Matches
+      </a>
+
+      <a
+        href="viewing-centers.html"
+        class="text-sm font-medium text-slate-300 hover:text-white transition"
+      >
+        Viewing Centers
+      </a>
+
+      <a
+        href="index.html#how-it-works"
+        class="text-sm font-medium text-slate-300 hover:text-white transition"
+      >
+        How It Works
+      </a>
+
+    </div>
+
+
+    <!-- Desktop Actions -->
+    <div class="hidden lg:flex items-center gap-3">
+
+      <a
+        href="login.html"
+        class="px-5 py-2.5 rounded-xl border border-white/15 text-white text-sm font-semibold hover:bg-white/10 transition"
+      >
+        Sign In
+      </a>
+
+      <a
+        href="register.html"
+        class="animated-button px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-sm font-bold"
+      >
+        Create Account
+      </a>
+
+    </div>
+
+
+    <!-- Mobile Menu Button -->
+    <button
+      id="mobileMenuButton"
+      type="button"
+      class="lg:hidden w-11 h-11 rounded-xl border border-white/10 bg-white/5 text-white flex items-center justify-center hover:bg-white/10 transition"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="mobileMenu"
+    >
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-6 h-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="1.8"
+      >
+
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M4 6h16M4 12h16M4 18h16"
+        />
+
+      </svg>
+
+    </button>
+
+  </div>
+
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobileMenu"
+    class="hidden lg:hidden pb-5"
+  >
+
+    <div
+      class="rounded-2xl border border-white/10 bg-slate-900/95 p-3 space-y-1"
+    >
+
+      <a
+        href="index.html"
+        class="block rounded-xl px-4 py-3 text-slate-300 hover:bg-white/5 hover:text-white transition"
+      >
+        Home
+      </a>
+
+      <a
+        href="matches.html"
+        class="block rounded-xl px-4 py-3 text-slate-300 hover:bg-white/5 hover:text-white transition"
+      >
+        Matches
+      </a>
+
+      <a
+        href="viewing-centers.html"
+        class="block rounded-xl px-4 py-3 text-slate-300 hover:bg-white/5 hover:text-white transition"
+      >
+        Viewing Centers
+      </a>
+
+      <a
+        href="index.html#how-it-works"
+        class="block rounded-xl px-4 py-3 text-slate-300 hover:bg-white/5 hover:text-white transition"
+      >
+        How It Works
+      </a>
+
+      <div class="border-t border-white/10 my-2"></div>
+
+      <a
+        href="login.html"
+        class="block rounded-xl px-4 py-3 text-slate-300 hover:bg-white/5 hover:text-white transition"
+      >
+        Sign In
+      </a>
+
+      <a
+        href="register.html"
+        class="block rounded-xl px-4 py-3 bg-emerald-500 text-slate-950 font-bold text-center"
+      >
+        Create Account
+      </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+  </nav>
+
+  <!-- =====================================================
+       HERO / SUCCESS HEADER
+  ====================================================== -->
+
+  <header
+    class="relative pt-20 bg-slate-950 overflow-hidden"
+  >
+
+
+<div class="absolute inset-0">
+
+  <img
+    src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=2200&q=85"
+    alt=""
+    class="w-full h-full object-cover opacity-20"
+  >
+
+  <div
+    class="absolute inset-0 bg-gradient-to-b from-slate-950/85 via-slate-950/90 to-slate-950"
+  ></div>
+
+</div>
+
+
+<div
+  class="absolute -top-40 -right-32 w-96 h-96 rounded-full bg-emerald-500/20 blur-3xl"
+></div>
+
+
+<div
+  class="absolute -bottom-40 -left-32 w-96 h-96 rounded-full bg-emerald-700/10 blur-3xl"
+></div>
+
+
+<div class="floating-football">
+  ⚽
+</div>
+
+
+<!-- Stadium Line Decoration -->
+<svg
+  class="absolute bottom-0 left-0 w-full h-40 opacity-10"
+  viewBox="0 0 1200 200"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  preserveAspectRatio="none"
+>
+
+  <path
+    d="M0 170C170 120 300 120 450 160C620 205 780 70 960 110C1060 132 1130 150 1200 115"
+    stroke="white"
+    stroke-width="2"
+  />
+
+  <path
+    d="M0 190C170 140 300 140 450 180C620 225 780 100 960 130C1060 152 1130 170 1200 135"
+    stroke="#34d399"
+    stroke-width="2"
+  />
+
+</svg>
+
+
+<div
+  class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 text-center"
+>
+
+  <!-- Success Icon -->
+  <div
+    class="mx-auto w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-emerald-500/15 border border-emerald-400/30 flex items-center justify-center"
+  >
+
+    <div
+      class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-emerald-500 flex items-center justify-center shadow-lg shadow-emerald-500/30"
+    >
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-8 h-8 sm:w-9 sm:h-9 text-slate-950"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2.5"
+      >
+
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m5 12 4 4L19 6"
+        />
+
+      </svg>
+
+    </div>
+
+  </div>
+
+
+  <div
+    class="mt-7 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 text-emerald-300 text-xs font-bold uppercase tracking-[0.2em]"
+  >
+
+    <span
+      class="w-2 h-2 rounded-full bg-emerald-400"
+    ></span>
+
+    Booking Confirmed
+
+  </div>
+
+
+  <h1
+    class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight"
+  >
+    You're ready for
+    <span class="text-emerald-400">
+      matchday.
+    </span>
+  </h1>
+
+
+  <p
+    class="mt-5 max-w-2xl mx-auto text-lg text-slate-300 leading-relaxed"
+  >
+    Your Football View booking has been recorded.
+    Keep your booking reference available when you arrive
+    at the viewing center.
+  </p>
+
+</div>
+
+
+  </header>
+
+  <!-- =====================================================
+       CONFIRMATION CONTENT
+  ====================================================== -->
+
+  <main
+    class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16"
+  >
+
+
+<!-- Missing Booking State -->
+<div
+  id="missingBooking"
+  class="hidden max-w-xl mx-auto"
+>
+
+  <div
+    class="bg-white rounded-3xl border border-slate-200 shadow-sm p-8 text-center"
+  >
+
+    <div
+      class="mx-auto w-16 h-16 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center"
+    >
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-8 h-8"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="1.8"
+      >
+
+        <circle
+          cx="12"
+          cy="12"
+          r="9"
+        />
+
+        <path
+          stroke-linecap="round"
+          d="M12 8v4"
+        />
+
+        <path
+          stroke-linecap="round"
+          d="M12 16h.01"
+        />
+
+      </svg>
+
+    </div>
+
+
+    <h2
+      class="mt-6 text-2xl font-black text-slate-950"
+    >
+      No booking found
+    </h2>
+
+
+    <p
+      class="mt-3 text-slate-500 leading-relaxed"
+    >
+      We couldn't find a recent booking on this device.
+      Please return to the booking page and complete the
+      booking process again.
+    </p>
+
+
+    <a
+      href="booking.html"
+      class="animated-button inline-flex items-center justify-center gap-2 mt-7 px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold"
+    >
+      Start a Booking
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-5 h-5"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M13 7l5 5m0 0-5 5m5-5H6"
+        />
+
+      </svg>
+
+    </a>
+
+  </div>
+
+</div>
+
+
+<!-- Booking Result -->
+<div
+  id="bookingResult"
+  class="grid grid-cols-1 lg:grid-cols-3 gap-8"
+>
+
+
+  <!-- =================================================
+       DIGITAL TICKET
+  ================================================== -->
+
+  <section
+    class="lg:col-span-2"
+  >
+
+    <div
+      class="bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden"
+    >
+
+      <!-- Ticket Header -->
+      <div
+        class="relative bg-slate-950 px-6 sm:px-8 py-7 overflow-hidden"
+      >
+
+        <div
+          class="absolute -right-20 -top-20 w-48 h-48 rounded-full bg-emerald-500/15 blur-3xl"
+        ></div>
+
+
+        <div
+          class="relative z-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5"
+        >
+
+          <div>
+
+            <p
+              class="text-emerald-400 text-xs font-bold uppercase tracking-[0.2em]"
+            >
+              Football View
+            </p>
+
+            <h2
+              class="mt-2 text-2xl sm:text-3xl font-black text-white"
+            >
+              Matchday Ticket
+            </h2>
+
+          </div>
+
+
+          <div
+            class="flex items-center gap-3"
+          >
+
+            <div
+              class="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-400/20 flex items-center justify-center overflow-hidden"
+            >
+
+              <img
+                src="https://icons.iconarchive.com/icons/pictogrammers/material/128/football-icon.png"
+                alt=""
+                class="w-8 h-8 object-contain"
+              >
+
+            </div>
+
+            <div>
+
+              <div
+                class="text-white text-xs font-black tracking-[0.16em]"
+              >
+                FOOTBALL VIEW
+              </div>
+
+              <div
+                class="text-emerald-400 text-[9px] uppercase tracking-[0.25em]"
+              >
+                Kano State
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- Ticket Match Area -->
+      <div class="p-6 sm:p-8">
+
+        <div
+          class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
+        >
+
+          <div>
+
+            <p
+              class="text-xs font-bold uppercase tracking-[0.16em] text-slate-400"
+            >
+              Your Match
+            </p>
+
+            <h3
+              id="ticketMatch"
+              class="mt-2 text-2xl sm:text-3xl font-black text-slate-950"
+            >
+              --
+            </h3>
+
+            <p
+              id="ticketDate"
+              class="mt-2 text-sm text-slate-500"
+            >
+              --
+            </p>
+
+          </div>
+
+
+          <div
+            class="self-start sm:self-center px-4 py-2 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-black uppercase tracking-wider"
+          >
+            Confirmed
+          </div>
+
+        </div>
+
+
+        <!-- Ticket Divider -->
+        <div class="relative my-8">
+
+          <div
+            class="border-t border-dashed border-slate-300"
+          ></div>
+
+          <span
+            class="absolute left-0 -top-3 w-6 h-6 rounded-full bg-slate-50 border border-slate-200"
+          ></span>
+
+          <span
+            class="absolute right-0 -top-3 w-6 h-6 rounded-full bg-slate-50 border border-slate-200"
+          ></span>
+
+        </div>
+
+
+        <!-- Center -->
+        <div
+          class="rounded-2xl bg-slate-50 border border-slate-200 p-5"
+        >
+
+          <div
+            class="flex items-start gap-4"
+          >
+
+            <div
+              class="w-11 h-11 flex-shrink-0 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center"
+            >
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 21s7-5.25 7-11a7 7 0 1 0-14 0c0 5.75 7 11 7 11Z"
+                />
+
+                <circle
+                  cx="12"
+                  cy="10"
+                  r="2.2"
+                />
+
+              </svg>
+
+            </div>
+
+
+            <div>
+
+              <p
+                class="text-xs uppercase tracking-wider text-slate-400"
+              >
+                Viewing Center
+              </p>
+
+              <h4
+                id="ticketCenter"
+                class="mt-1 text-lg font-black text-slate-950"
+              >
+                --
+              </h4>
+
+              <p
+                id="ticketLocation"
+                class="mt-1 text-sm text-slate-500"
+              >
+                --
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- Ticket Details -->
+        <div
+          class="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-4"
+        >
+
+          <div
+            class="rounded-2xl border border-slate-200 p-4"
+          >
+
+            <p
+              class="text-[11px] uppercase tracking-wider text-slate-400"
+            >
+              Seats
+            </p>
+
+            <p
+              id="ticketSeats"
+              class="mt-2 text-xl font-black text-slate-950"
+            >
+              --
+            </p>
+
+          </div>
+
+
+          <div
+            class="rounded-2xl border border-slate-200 p-4"
+          >
+
+            <p
+              class="text-[11px] uppercase tracking-wider text-slate-400"
+            >
+              Booking Fee
+            </p>
+
+            <p
+              class="mt-2 text-xl font-black text-emerald-600"
+            >
+              Free
+            </p>
+
+          </div>
+
+
+          <div
+            class="col-span-2 sm:col-span-1 rounded-2xl border border-slate-200 p-4"
+          >
+
+            <p
+              class="text-[11px] uppercase tracking-wider text-slate-400"
+            >
+              Status
+            </p>
+
+            <p
+              class="mt-2 text-xl font-black text-emerald-600"
+            >
+              Confirmed
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- Customer -->
+        <div
+          class="mt-6 pt-6 border-t border-slate-200"
+        >
+
+          <p
+            class="text-xs font-bold uppercase tracking-[0.16em] text-slate-400"
+          >
+            Booker
+          </p>
+
+
+          <div
+            class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-4"
+          >
+
+            <div>
+
+              <p
+                class="text-xs text-slate-400"
+              >
+                Name
+              </p>
+
+              <p
+                id="customerName"
+                class="mt-1 text-sm font-bold text-slate-900"
+              >
+                --
+              </p>
+
+            </div>
+
+
+            <div>
+
+              <p
+                class="text-xs text-slate-400"
+              >
+                Phone
+              </p>
+
+              <p
+                id="customerPhone"
+                class="mt-1 text-sm font-bold text-slate-900 break-words"
+              >
+                --
+              </p>
+
+            </div>
+
+
+            <div>
+
+              <p
+                class="text-xs text-slate-400"
+              >
+                Email
+              </p>
+
+              <p
+                id="customerEmail"
+                class="mt-1 text-sm font-bold text-slate-900 break-words"
+              >
+                --
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- Reference -->
+        <div
+          class="mt-7 rounded-2xl bg-slate-950 p-5"
+        >
+
+          <div
+            class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
+          >
+
+            <div>
+
+              <p
+                class="text-xs uppercase tracking-[0.16em] text-slate-500"
+              >
+                Booking Reference
+              </p>
+
+              <p
+                id="bookingReference"
+                class="mt-1 text-xl sm:text-2xl font-black tracking-[0.12em] text-white"
+              >
+                FV-000000
+              </p>
+
+            </div>
+
+
+            <button
+              id="copyReference"
+              type="button"
+              class="animated-button inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-white/10 bg-white/5 text-white text-sm font-bold hover:bg-white/10"
+            >
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+
+                <rect
+                  x="9"
+                  y="9"
+                  width="11"
+                  height="11"
+                  rx="2"
+                />
+
+                <path
+                  d="M15 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h3"
+                />
+
+              </svg>
+
+              Copy Reference
+
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- Important Note -->
+        <div
+          class="mt-6 flex items-start gap-3 rounded-2xl border border-amber-200 bg-amber-50 p-4"
+        >
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-5 h-5 flex-shrink-0 text-amber-600 mt-0.5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+
+            <circle
+              cx="12"
+              cy="12"
+              r="9"
+            />
+
+            <path
+              stroke-linecap="round"
+              d="M12 8v4"
+            />
+
+            <path
+              stroke-linecap="round"
+              d="M12 16h.01"
+            />
+
+          </svg>
+
+
+          <p
+            class="text-sm text-amber-900 leading-relaxed"
+          >
+            Keep your booking reference with you on
+            matchday. Show it to the viewing-center staff
+            when requested.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =================================================
+       RIGHT / ACTIONS
+  ================================================== -->
+
+  <aside>
+
+    <div
+      class="lg:sticky lg:top-28 space-y-5"
+    >
+
+      <!-- Booking Status -->
+      <div
+        class="rounded-3xl bg-slate-950 p-6 shadow-xl border border-slate-800"
+      >
+
+        <div
+          class="flex items-center gap-3"
+        >
+
+          <div
+            class="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-400/20 text-emerald-400 flex items-center justify-center"
+          >
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m5 12 4 4L19 6"
+              />
+
+            </svg>
+
+          </div>
+
+
+          <div>
+
+            <p
+              class="text-white font-bold"
+            >
+              Booking secured
+            </p>
+
+            <p
+              class="text-xs text-slate-500 mt-1"
+            >
+              Keep your reference safe.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="mt-6 space-y-3"
+        >
+
+          <a
+            href="matches.html"
+            class="animated-button w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black"
+          >
+
+            Explore More Matches
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13 7l5 5m0 0-5 5m5-5H6"
+              />
+
+            </svg>
+
+          </a>
+
+
+          <a
+            href="viewing-centers.html"
+            class="w-full flex items-center justify-center px-5 py-3 rounded-xl border border-white/10 text-white text-sm font-bold hover:bg-white/5 transition"
+          >
+            View Other Centers
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- Arrival Information -->
+      <div
+        class="rounded-3xl bg-white border border-slate-200 p-6"
+      >
+
+        <h3
+          class="font-black text-slate-950"
+        >
+          On matchday
+        </h3>
+
+
+        <div
+          class="mt-5 space-y-4"
+        >
+
+          <div class="flex items-start gap-3">
+
+            <div
+              class="w-8 h-8 flex-shrink-0 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center"
+            >
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 8v4l3 2"
+                />
+
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="9"
+                />
+
+              </svg>
+
+            </div>
+
+
+            <div>
+
+              <p
+                class="text-sm font-bold text-slate-900"
+              >
+                Arrive early
+              </p>
+
+              <p
+                class="mt-1 text-xs text-slate-500 leading-relaxed"
+              >
+                Arrive before kickoff to make entry easier.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="flex items-start gap-3">
+
+            <div
+              class="w-8 h-8 flex-shrink-0 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center"
+            >
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 12h14"
+                />
+
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m12 5 7 7-7 7"
+                />
+
+              </svg>
+
+            </div>
+
+
+            <div>
+
+              <p
+                class="text-sm font-bold text-slate-900"
+              >
+                Show your reference
+              </p>
+
+              <p
+                class="mt-1 text-xs text-slate-500 leading-relaxed"
+              >
+                Present your booking reference to the staff.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="flex items-start gap-3">
+
+            <div
+              class="w-8 h-8 flex-shrink-0 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center"
+            >
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 3v18"
+                />
+
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 8h14"
+                />
+
+              </svg>
+
+            </div>
+
+
+            <div>
+
+              <p
+                class="text-sm font-bold text-slate-900"
+              >
+                Keep your booking details
+              </p>
+
+              <p
+                class="mt-1 text-xs text-slate-500 leading-relaxed"
+              >
+                Keep your phone and email available in
+                case the center needs to contact you.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </aside>
+
+</div>
+
+
+  </main>
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer
+    class="bg-slate-950 border-t border-white/10"
+  >
+
+
+<div
+  class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12"
+>
+
+  <div
+    class="grid grid-cols-1 md:grid-cols-4 gap-10"
+  >
+
+    <!-- Brand -->
+    <div class="md:col-span-2">
+
+      <a
+        href="index.html"
+        class="inline-flex items-center gap-3"
+      >
+
+        <div
+          class="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-400/20 flex items-center justify-center overflow-hidden"
+        >
+
+          <img
+            src="https://icons.iconarchive.com/icons/pictogrammers/material/128/football-icon.png"
+            alt="Football View"
+            class="w-8 h-8 object-contain"
+          >
+
+        </div>
+
+
+        <div>
+
+          <div
+            class="text-white font-black tracking-[0.16em]"
+          >
+            FOOTBALL VIEW
+          </div>
+
+          <div
+            class="text-emerald-400 text-[10px] uppercase tracking-[0.25em] mt-1"
+          >
+            Kano State
+          </div>
+
+        </div>
+
+      </a>
+
+
+      <p
+        class="mt-5 max-w-md text-slate-400 leading-relaxed text-sm"
+      >
+        A digital platform designed to help football
+        supporters discover matches, find viewing centers
+        and plan better matchday experiences across Kano State.
+      </p>
+
+    </div>
+
+
+    <!-- Explore -->
+    <div>
+
+      <h3
+        class="text-white font-bold mb-4"
+      >
+        Explore
+      </h3>
+
+      <div class="space-y-3 text-sm">
+
+        <a
+          href="index.html"
+          class="block text-slate-400 hover:text-emerald-400 transition"
+        >
+          Home
+        </a>
+
+        <a
+          href="matches.html"
+          class="block text-slate-400 hover:text-emerald-400 transition"
+        >
+          Matches
+        </a>
+
+        <a
+          href="viewing-centers.html"
+          class="block text-slate-400 hover:text-emerald-400 transition"
+        >
+          Viewing Centers
+        </a>
+
+        <a
+          href="index.html#how-it-works"
+          class="block text-slate-400 hover:text-emerald-400 transition"
+        >
+          How It Works
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- Account -->
+    <div>
+
+      <h3
+        class="text-white font-bold mb-4"
+      >
+        Account
+      </h3>
+
+      <div class="space-y-3 text-sm">
+
+        <a
+          href="login.html"
+          class="block text-slate-400 hover:text-emerald-400 transition"
+        >
+          Sign In
+        </a>
+
+        <a
+          href="register.html"
+          class="block text-slate-400 hover:text-emerald-400 transition"
+        >
+          Create Account
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div
+    class="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-xs text-slate-500"
+  >
+
+    <p>
+      © <span data-current-year>2026</span>
+      Football View. All rights reserved.
+    </p>
+
+    <p>
+      Bayero University, Kano. Final Year Project (SWE)
+    </p>
+
+  </div>
+
+</div>
+
+
+  </footer>
+
+  <!-- =====================================================
+       CONFIRMATION PAGE JAVASCRIPT
+  ====================================================== -->
+
+  <script>
+
+    /* ================================================
+       Elements
+    ================================================ */
+
+    const bookingResult =
+      document.getElementById(
+        "bookingResult"
+      );
+
+    const missingBooking =
+      document.getElementById(
+        "missingBooking"
+      );
+
+    const ticketMatch =
+      document.getElementById(
+        "ticketMatch"
+      );
+
+    const ticketDate =
+      document.getElementById(
+        "ticketDate"
+      );
+
+    const ticketCenter =
+      document.getElementById(
+        "ticketCenter"
+      );
+
+    const ticketLocation =
+      document.getElementById(
+        "ticketLocation"
+      );
+
+    const ticketSeats =
+      document.getElementById(
+        "ticketSeats"
+      );
+
+    const customerName =
+      document.getElementById(
+        "customerName"
+      );
+
+    const customerPhone =
+      document.getElementById(
+        "customerPhone"
+      );
+
+    const customerEmail =
+      document.getElementById(
+        "customerEmail"
+      );
+
+    const bookingReference =
+      document.getElementById(
+        "bookingReference"
+      );
+
+    const copyReference =
+      document.getElementById(
+        "copyReference"
+      );
+
+
+    /* ================================================
+       Generate Booking Reference
+    ================================================ */
+
+    function generateBookingReference() {
+
+      const storedReference =
+        sessionStorage.getItem(
+          "footballViewBookingReference"
+        );
+
+
+      if (storedReference) {
+        return storedReference;
+      }
+
+
+      const randomNumber =
+        Math.floor(
+          100000 +
+          Math.random() * 900000
+        );
+
+
+      const reference =
+        `FV-${randomNumber}`;
+
+
+      sessionStorage.setItem(
+        "footballViewBookingReference",
+        reference
+      );
+
+
+      return reference;
+
+    }
+
+
+    /* ================================================
+       Load Booking
+    ================================================ */
+
+    function loadBooking() {
+
+      const storedBooking =
+        sessionStorage.getItem(
+          "footballViewBooking"
+        );
+
+
+      if (!storedBooking) {
+
+        bookingResult.classList.add(
+          "hidden"
+        );
+
+        missingBooking.classList.remove(
+          "hidden"
+        );
+
+        return;
+
+      }
+
+
+      let booking;
+
+
+      try {
+
+        booking =
+          JSON.parse(
+            storedBooking
+          );
+
+      } catch (error) {
+
+        bookingResult.classList.add(
+          "hidden"
+        );
+
+        missingBooking.classList.remove(
+          "hidden"
+        );
+
+        return;
+
+      }
+
+
+      if (
+        !booking.match ||
+        !booking.center ||
+        !booking.customer
+      ) {
+
+        bookingResult.classList.add(
+          "hidden"
+        );
+
+        missingBooking.classList.remove(
+          "hidden"
+        );
+
+        return;
+
+      }
+
+
+      /* Match */
+
+      ticketMatch.textContent =
+        booking.match.name || "--";
+
+      ticketDate.textContent =
+        booking.match.date || "--";
+
+
+      /* Center */
+
+      ticketCenter.textContent =
+        booking.center.name || "--";
+
+      ticketLocation.textContent =
+        booking.center.location || "--";
+
+
+      /* Seats */
+
+      ticketSeats.textContent =
+        booking.seats || 1;
+
+
+      /* Customer */
+
+      customerName.textContent =
+        booking.customer.fullName || "--";
+
+      customerPhone.textContent =
+        booking.customer.phone || "--";
+
+      customerEmail.textContent =
+        booking.customer.email || "--";
+
+
+      /* Reference */
+
+      bookingReference.textContent =
+        generateBookingReference();
+
+    }
+
+
+    /* ================================================
+       Copy Booking Reference
+    ================================================ */
+
+    if (copyReference) {
+
+      copyReference.addEventListener(
+        "click",
+        async () => {
+
+          const reference =
+            bookingReference.textContent;
+
+
+          try {
+
+            await navigator.clipboard.writeText(
+              reference
+            );
+
+
+            const originalText =
+              copyReference.innerHTML;
+
+
+            copyReference.innerHTML = `
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m5 12 4 4L19 6"
+                />
+              </svg>
+
+              Copied
+            `;
+
+
+            setTimeout(() => {
+
+              copyReference.innerHTML =
+                originalText;
+
+            }, 1800);
+
+          } catch (error) {
+
+            alert(
+              "Booking reference: " +
+              reference
+            );
+
+          }
+
+        }
+      );
+
+    }
+
+
+    /* ================================================
+       Current Year
+    ================================================ */
+
+    document
+      .querySelectorAll(
+        "[data-current-year]"
+      )
+      .forEach(
+        (element) => {
+
+          element.textContent =
+            new Date().getFullYear();
+
+        }
+      );
+
+
+    /* ================================================
+       Initialize
+    ================================================ */
+
+    loadBooking();
+
+  </script>
+
+  <!-- Shared JavaScript -->
+
+  <script
+    src="assets/js/app.js"
+  ></script>
+
+</body>
+</html>

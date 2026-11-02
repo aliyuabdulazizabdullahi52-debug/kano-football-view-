@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#020617" />
+  <meta name="description" content="View match details, available viewing centers and booking information on Football View Kano State." />
+  <title>Match Details | Football View</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="assets/css/app.css" />
+
+  <style>
+    :root {
+      color-scheme: light;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* =========================
+       Match Hero
+    ========================= */
+
+    .hero-match {
+      min-height: 690px;
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(2, 6, 23, .96) 0%,
+          rgba(2, 6, 23, .82) 43%,
+          rgba(2, 6, 23, .70) 100%
+        ),
+        linear-gradient(
+          0deg,
+          rgba(5, 150, 105, .22),
+          transparent 50%
+        ),
+        url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=2000&q=85');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-match::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(
+          circle at 70% 35%,
+          rgba(16, 185, 129, .18),
+          transparent 27%
+        );
+      pointer-events: none;
+    }
+
+    /* =========================
+       Stadium Glow
+    ========================= */
+
+    .stadium-light {
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border-radius: 9999px;
+      filter: blur(85px);
+      opacity: .18;
+      background: #34d399;
+      animation: stadiumGlow 7s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+
+    .stadium-light.one {
+      top: 8%;
+      right: 8%;
+    }
+
+    .stadium-light.two {
+      bottom: -15%;
+      left: 8%;
+      animation-delay: -2s;
+    }
+
+    @keyframes stadiumGlow {
+      from {
+        transform: scale(.8) translateY(0);
+        opacity: .10;
+      }
+
+      to {
+        transform: scale(1.25) translateY(-18px);
+        opacity: .30;
+      }
+    }
+
+    /* =========================
+       Match Stage
+    ========================= */
+
+    .match-stage {
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, .10),
+        rgba(255, 255, 255, .05)
+      );
+      border: 1px solid rgba(255, 255, 255, .14);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, .32);
+      backdrop-filter: blur(14px);
+    }
+
+    /* =========================
+       Team Orb
+    ========================= */
+
+    .team-orb {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .team-orb::before {
+      content: "";
+      position: absolute;
+      inset: -7px;
+      border-radius: 9999px;
+      border: 1px solid rgba(110, 231, 183, .45);
+      animation: teamRing 2.8s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    @keyframes teamRing {
+      0%,
+      100% {
+        transform: scale(.94);
+        opacity: .4;
+      }
+
+      50% {
+        transform: scale(1.08);
+        opacity: .95;
+      }
+    }
+
+    /* =========================
+       Animated Pitch Line
+    ========================= */
+
+    .pitch-line {
+      position: relative;
+      height: 54px;
+      overflow: hidden;
+    }
+
+    .pitch-line::before {
+      content: "";
+      position: absolute;
+      left: 4%;
+      right: 4%;
+      top: 50%;
+      height: 2px;
+      transform: translateY(-50%);
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, .45),
+        transparent
+      );
+    }
+
+    .rolling-ball {
+      position: absolute;
+      top: 50%;
+      left: 7%;
+      width: 34px;
+      height: 34px;
+      transform: translateY(-50%);
+      animation: ballRun 4.8s ease-in-out infinite;
+      filter: drop-shadow(0 8px 10px rgba(0, 0, 0, .35));
+    }
+
+    .rolling-ball svg {
+      animation: ballSpin 1.1s linear infinite;
+    }
+
+    @keyframes ballRun {
+      0%,
+      100% {
+        left: 7%;
+      }
+
+      50% {
+        left: calc(93% - 34px);
+      }
+    }
+
+    @keyframes ballSpin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* =========================
+       Floating Ball
+    ========================= */
+
+    .floating-ball {
+      position: absolute;
+      right: 6%;
+      top: 20%;
+      width: 92px;
+      height: 92px;
+      opacity: .10;
+      animation:
+        floatBall 6s ease-in-out infinite,
+        ballSpin 18s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes floatBall {
+      0%,
+      100% {
+        translate: 0 0;
+      }
+
+      50% {
+        translate: 0 -26px;
+      }
+    }
+
+    /* =========================
+       Scroll Reveal
+    ========================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition:
+        opacity .7s ease,
+        transform .7s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       Center Cards
+    ========================= */
+
+    .center-card {
+      transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+      overflow: hidden;
+    }
+
+    .center-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 55px rgba(15, 23, 42, .14);
+      border-color: rgba(16, 185, 129, .45);
+    }
+
+    .center-card .center-img {
+      transition: transform .55s ease;
+    }
+
+    .center-card:hover .center-img {
+      transform: scale(1.06);
+    }
+
+    /* =========================
+       Capacity Bar
+    ========================= */
+
+    .capacity-bar > span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(
+        90deg,
+        #10b981,
+        #34d399
+      );
+      animation: fillBar 1.4s ease both;
+      transform-origin: left;
+    }
+
+    @keyframes fillBar {
+      from {
+        transform: scaleX(0);
+      }
+
+      to {
+        transform: scaleX(1);
+      }
+    }
+
+    /* =========================
+       Glass Statistics
+    ========================= */
+
+    .glass-stat {
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .10);
+      backdrop-filter: blur(10px);
+    }
+
+    /* =========================
+       Pulse Ring
+    ========================= */
+
+    .pulse-ring {
+      position: relative;
+    }
+
+    .pulse-ring::after {
+      content: "";
+      position: absolute;
+      inset: -5px;
+      border-radius: 9999px;
+      border: 2px solid rgba(16, 185, 129, .35);
+      animation: pulseRing 1.8s ease-out infinite;
+    }
+
+    @keyframes pulseRing {
+      0% {
+        transform: scale(.8);
+        opacity: .8;
+      }
+
+      100% {
+        transform: scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    /* =========================
+       Mobile
+    ========================= */
+
+    @media (max-width: 640px) {
+      .hero-match {
+        min-height: auto;
+      }
+
+      .match-stage {
+        border-radius: 1.5rem;
+      }
+
+      .rolling-ball {
+        width: 28px;
+        height: 28px;
+      }
+
+      @keyframes ballRun {
+        0%,
+        100% {
+          left: 6%;
+        }
+
+        50% {
+          left: calc(94% - 28px);
+        }
+      }
+    }
+
+    /* =========================
+       Reduced Motion
+    ========================= */
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+
+</head>
+
+<body class="bg-slate-50 text-slate-900 page-enter">
+
+  <!-- =====================================================
+       NAVIGATION
+  ====================================================== -->
+
+  <header
+    id="navbar"
+    class="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-slate-950/90 backdrop-blur-xl transition-shadow duration-300"
+  >
+    <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+
+  <div class="flex h-20 items-center justify-between">
+
+    <!-- Brand -->
+    <a
+      href="index.html"
+      class="flex items-center gap-3 text-white"
+      aria-label="Football View home"
+    >
+      <span class="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl bg-emerald-500 p-2 shadow-lg shadow-emerald-500/20">
+        <img
+          src="https://icons.iconarchive.com/icons/pictogrammers/material/128/football-icon.png"
+          alt=""
+          class="h-full w-full object-contain"
+        />
+      </span>
+
+      <span>
+        <span class="block text-lg font-extrabold tracking-tight">
+          Football View
+        </span>
+
+        <span class="block text-[11px] font-bold tracking-[.20em] text-emerald-300">
+          KANO STATE
+        </span>
+      </span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <div class="hidden items-center gap-8 md:flex">
+
+      <a
+        href="index.html"
+        class="text-sm font-medium text-slate-300 transition hover:text-white"
+      >
+        Home
+      </a>
+
+      <a
+        href="matches.html"
+        aria-current="page"
+        class="text-sm font-semibold text-emerald-400"
+      >
+        Matches
+      </a>
+
+      <a
+        href="viewing-centers.html"
+        class="text-sm font-medium text-slate-300 transition hover:text-white"
+      >
+        Viewing Centers
+      </a>
+
+      <a
+        href="login.html"
+        class="text-sm font-medium text-slate-300 transition hover:text-white"
+      >
+        Login
+      </a>
+
+      <a
+        href="register.html"
+        class="animated-button rounded-full bg-emerald-500 px-5 py-3 text-sm font-bold text-white hover:bg-emerald-400"
+      >
+        Register
+      </a>
+
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button
+      id="mobileMenuButton"
+      type="button"
+      class="rounded-lg p-2 text-white transition hover:bg-white/10 md:hidden"
+      aria-label="Open menu"
+      aria-controls="mobileMenu"
+      aria-expanded="false"
+    >
+      <svg
+        class="h-7 w-7"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        aria-hidden="true"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        />
+      </svg>
+    </button>
+
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div
+    id="mobileMenu"
+    class="hidden border-t border-white/10 py-5 md:hidden"
+  >
+    <div class="flex flex-col gap-4">
+
+      <a
+        href="index.html"
+        class="text-sm text-slate-300 transition hover:text-white"
+      >
+        Home
+      </a>
+
+      <a
+        href="matches.html"
+        aria-current="page"
+        class="text-sm font-semibold text-emerald-400"
+      >
+        Matches
+      </a>
+
+      <a
+        href="viewing-centers.html"
+        class="text-sm text-slate-300 transition hover:text-white"
+      >
+        Viewing Centers
+      </a>
+
+      <a
+        href="login.html"
+        class="text-sm text-slate-300 transition hover:text-white"
+      >
+        Login
+      </a>
+
+      <a
+        href="register.html"
+        class="w-fit rounded-full bg-emerald-500 px-5 py-3 text-sm font-bold text-white transition hover:bg-emerald-400"
+      >
+        Register
+      </a>
+
+    </div>
+  </div>
+
+</nav>
+
+
+  </header>
+
+  <!-- =====================================================
+       HERO
+  ====================================================== -->
+
+  <section class="hero-match pt-28 text-white">
+
+
+<div class="stadium-light one"></div>
+<div class="stadium-light two"></div>
+
+<!-- Decorative Football -->
+<svg
+  class="floating-ball hidden sm:block"
+  viewBox="0 0 100 100"
+  fill="none"
+  stroke="white"
+  stroke-width="2"
+  aria-hidden="true"
+>
+  <circle cx="50" cy="50" r="46"/>
+  <path d="M50 30l13 9-5 15H42l-5-15 13-9ZM50 4v26M91 33 63 39M83 78 58 54M17 78l25-24M9 33l28 6"/>
+</svg>
+
+<div class="relative z-10 mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
+
+  <!-- Breadcrumb -->
+  <div class="mb-7 flex items-center gap-2 text-sm text-slate-300">
+    <a
+      href="matches.html"
+      class="transition hover:text-white"
+    >
+      Matches
+    </a>
+
+    <span>/</span>
+
+    <span class="font-semibold text-emerald-300">
+      Match Details
+    </span>
+  </div>
+
+  <div class="grid items-center gap-10 lg:grid-cols-[1.05fr_.95fr]">
+
+    <!-- Match Introduction -->
+    <div class="slide-up">
+
+      <span class="inline-flex items-center gap-2 rounded-full border border-emerald-300/20 bg-emerald-400/10 px-4 py-2 text-xs font-black uppercase tracking-[.18em] text-emerald-300 backdrop-blur">
+        <span class="pulse-ring h-2 w-2 rounded-full bg-emerald-400"></span>
+        Premier League · Featured Match
+      </span>
+
+      <h1 class="mt-6 max-w-3xl text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+        Manchester City
+        <span class="text-emerald-400">vs</span>
+        Arsenal
+      </h1>
+
+      <p class="mt-5 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg">
+        Choose a verified viewing center, reserve your place, and enjoy a proper match-day atmosphere with football fans across Kano.
+      </p>
+
+      <!-- Match Stats -->
+      <div class="mt-8 flex flex-wrap gap-3 text-sm font-semibold">
+
+        <div class="glass-stat rounded-xl px-4 py-3">
+          <span class="block text-[11px] uppercase tracking-widest text-slate-400">
+            Date
+          </span>
+          <span class="mt-1 block">
+            Saturday
+          </span>
+        </div>
+
+        <div class="glass-stat rounded-xl px-4 py-3">
+          <span class="block text-[11px] uppercase tracking-widest text-slate-400">
+            Kick-off
+          </span>
+          <span class="mt-1 block">
+            7:00 PM
+          </span>
+        </div>
+
+        <div class="glass-stat rounded-xl px-4 py-3">
+          <span class="block text-[11px] uppercase tracking-widest text-slate-400">
+            Centers
+          </span>
+          <span class="mt-1 block">
+            4 Available
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Match Stage -->
+    <div class="match-stage slide-up slide-up-delay-1 rounded-[2rem] p-5 sm:p-7">
+
+      <div class="mb-5 flex items-center justify-between gap-3">
+
+        <span class="rounded-full bg-red-500/15 px-3 py-1.5 text-xs font-black uppercase tracking-wider text-red-300 ring-1 ring-red-400/20">
+          Upcoming
+        </span>
+
+        <span
+          id="countdown"
+          class="text-xs font-bold text-slate-300"
+          aria-live="polite"
+        >
+          Match starts soon
+        </span>
+
+      </div>
+
+      <div class="grid grid-cols-[1fr_auto_1fr] items-center gap-3 sm:gap-6">
+
+        <!-- Manchester City -->
+        <div class="text-center">
+
+          <div class="team-orb mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-sky-500/20 text-2xl font-black text-white ring-1 ring-sky-300/20 sm:h-24 sm:w-24">
+            MC
+          </div>
+
+          <h2 class="mt-4 text-base font-black sm:text-lg">
+            Manchester City
+          </h2>
+
+          <p class="mt-1 text-xs text-slate-400">
+            Home
+          </p>
+
+        </div>
+
+
+        <!-- Kick-off -->
+        <div class="text-center">
+
+          <div class="text-[11px] font-bold uppercase tracking-[.25em] text-emerald-300">
+            Kick-off
+          </div>
+
+          <div class="mt-2 text-3xl font-black sm:text-4xl">
+            7:00
+          </div>
+
+          <div class="text-xs font-bold text-slate-400">
+            PM
+          </div>
+
+        </div>
+
+
+        <!-- Arsenal -->
+        <div class="text-center">
+
+          <div class="team-orb mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-red-500/20 text-2xl font-black text-white ring-1 ring-red-300/20 sm:h-24 sm:w-24">
+            AR
+          </div>
+
+          <h2 class="mt-4 text-base font-black sm:text-lg">
+            Arsenal
+          </h2>
+
+          <p class="mt-1 text-xs text-slate-400">
+            Away
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- Animated Ball -->
+      <div
+        class="pitch-line mt-5"
+        aria-hidden="true"
+      >
+        <div class="rolling-ball">
+          <svg
+            viewBox="0 0 100 100"
+            fill="#fff"
+            stroke="#0f172a"
+            stroke-width="5"
+          >
+            <circle cx="50" cy="50" r="45"/>
+            <path
+              d="M50 30l13 9-5 15H42l-5-15 13-9ZM50 5v25M91 34 63 39M83 78 58 54M17 78l25-24M9 34l28 5"
+              fill="none"
+            />
+          </svg>
+        </div>
+      </div>
+
+
+      <div class="mt-3 rounded-2xl bg-black/15 px-4 py-3 text-center text-xs font-semibold text-slate-300 ring-1 ring-white/5">
+        Select a center below to continue your booking.
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+  </section>
+
+  <!-- =====================================================
+       MATCH INFORMATION STRIP
+  ====================================================== -->
+
+  <section class="relative z-20 -mt-1 border-y border-slate-200 bg-white">
+
+
+<div class="mx-auto grid max-w-7xl grid-cols-2 gap-px bg-slate-200 px-4 sm:grid-cols-4 sm:px-6 lg:px-8">
+
+  <div class="bg-white py-5 text-center">
+    <p class="text-xs font-bold uppercase tracking-widest text-slate-400">
+      Competition
+    </p>
+    <p class="mt-1 font-black">
+      Premier League
+    </p>
+  </div>
+
+  <div class="bg-white py-5 text-center">
+    <p class="text-xs font-bold uppercase tracking-widest text-slate-400">
+      Status
+    </p>
+    <p class="mt-1 font-black text-emerald-600">
+      Booking Open
+    </p>
+  </div>
+
+  <div class="bg-white py-5 text-center">
+    <p class="text-xs font-bold uppercase tracking-widest text-slate-400">
+      Centers
+    </p>
+    <p class="mt-1 font-black">
+      4 Verified
+    </p>
+  </div>
+
+  <div class="bg-white py-5 text-center">
+    <p class="text-xs font-bold uppercase tracking-widest text-slate-400">
+      Ticket
+    </p>
+    <p class="mt-1 font-black">
+      Digital Entry
+    </p>
+  </div>
+
+</div>
+
+  </section>
+
+  <!-- =====================================================
+       MAIN CONTENT
+  ====================================================== -->
+
+  <main class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+
+
+<div class="grid gap-10 lg:grid-cols-[1fr_340px]">
+
+  <!-- Available Centers -->
+  <div>
+
+    <div class="reveal mb-7 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+
+      <div>
+
+        <p class="text-xs font-black uppercase tracking-[.18em] text-emerald-600">
+          Choose where to watch
+        </p>
+
+        <h2 class="mt-2 text-3xl font-black tracking-tight text-slate-950">
+          Available Viewing Centers
+        </h2>
+
+        <p class="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
+          Each center below is registered on Football View. Availability is shown for this match only.
+        </p>
+
+      </div>
+
+      <a
+        href="viewing-centers.html"
+        class="text-sm font-bold text-emerald-700 transition hover:text-emerald-900"
+      >
+        View all centers →
+      </a>
+
+    </div>
+
+
+    <div class="grid gap-6 md:grid-cols-2">
+
+      <!-- =================================================
+           CENTER 1
+      ================================================== -->
+      <article class="center-card reveal rounded-[1.6rem] border border-slate-200 bg-white shadow-sm">
+
+        <div class="relative h-44 overflow-hidden">
+
+          <img
+            class="center-img h-full w-full object-cover"
+            src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1000&q=80"
+            alt="Football viewing atmosphere at Stadium View Center"
+            loading="lazy"
+          />
+
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+
+          <div class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-black text-emerald-700 backdrop-blur">
+            Verified Center
+          </div>
+
+          <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4 text-white">
+
+            <div>
+              <h3 class="text-xl font-black">
+                Stadium View Center
+              </h3>
+
+              <p class="mt-1 text-xs text-slate-200">
+                Kano Municipal · Ahmadu Bello Way
+              </p>
+            </div>
+
+            <div class="rounded-xl bg-black/30 px-3 py-2 text-center backdrop-blur">
+              <span class="block text-lg font-black">
+                42
+              </span>
+              <span class="text-[10px] uppercase tracking-wider text-slate-200">
+                spaces
+              </span>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="p-5">
+
+          <div class="flex items-center justify-between text-xs font-semibold text-slate-500">
+            <span>
+              Capacity 150
+            </span>
+
+            <span class="text-emerald-600">
+              72% booked
+            </span>
+          </div>
+
+          <div class="capacity-bar mt-2 h-2 overflow-hidden rounded-full bg-slate-100">
+            <span style="width:72%"></span>
+          </div>
+
+          <div class="mt-5 flex items-center justify-between gap-3">
+
+            <span class="inline-flex items-center gap-2 text-sm font-bold text-emerald-700">
+              <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+              Booking open
+            </span>
+
+            <a
+              href="booking.html"
+              class="animated-button rounded-xl bg-slate-950 px-4 py-3 text-sm font-black text-white hover:bg-emerald-600"
+            >
+              Book Now
+            </a>
+
+          </div>
+
+        </div>
+      </article>
+
+
+      <!-- =================================================
+           CENTER 2
+      ================================================== -->
+      <article class="center-card reveal rounded-[1.6rem] border border-slate-200 bg-white shadow-sm">
+
+        <div class="relative h-44 overflow-hidden">
+
+          <img
+            class="center-img h-full w-full object-cover"
+            src="https://images.unsplash.com/photo-1518604666860-9ed391f76460?auto=format&fit=crop&w=1000&q=80"
+            alt="Crowd watching football at Kano Sports Arena"
+            loading="lazy"
+          />
+
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+
+          <div class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-black text-emerald-700 backdrop-blur">
+            Verified Center
+          </div>
+
+          <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4 text-white">
+
+            <div>
+              <h3 class="text-xl font-black">
+                Kano Sports Arena
+              </h3>
+
+              <p class="mt-1 text-xs text-slate-200">
+                Nassarawa LGA · Zoo Road
+              </p>
+            </div>
+
+            <div class="rounded-xl bg-black/30 px-3 py-2 text-center backdrop-blur">
+              <span class="block text-lg font-black">
+                87
+              </span>
+
+              <span class="text-[10px] uppercase tracking-wider text-slate-200">
+                spaces
+              </span>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="p-5">
+
+          <div class="flex items-center justify-between text-xs font-semibold text-slate-500">
+            <span>
+              Capacity 200
+            </span>
+
+            <span class="text-emerald-600">
+              56% booked
+            </span>
+          </div>
+
+          <div class="capacity-bar mt-2 h-2 overflow-hidden rounded-full bg-slate-100">
+            <span style="width:56%"></span>
+          </div>
+
+          <div class="mt-5 flex items-center justify-between gap-3">
+
+            <span class="inline-flex items-center gap-2 text-sm font-bold text-emerald-700">
+              <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+              Booking open
+            </span>
+
+            <a
+              href="booking.html"
+              class="animated-button rounded-xl bg-slate-950 px-4 py-3 text-sm font-black text-white hover:bg-emerald-600"
+            >
+              Book Now
+            </a>
+
+          </div>
+
+        </div>
+      </article>
+
+
+      <!-- =================================================
+           CENTER 3
+      ================================================== -->
+      <article class="center-card reveal rounded-[1.6rem] border border-slate-200 bg-white shadow-sm">
+
+        <div class="relative h-44 overflow-hidden">
+
+          <img
+            class="center-img h-full w-full object-cover"
+            src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=1000&q=80"
+            alt="Football supporters at Green Field Viewing Hub"
+            loading="lazy"
+          />
+
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+
+          <div class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-black text-emerald-700 backdrop-blur">
+            Verified Center
+          </div>
+
+          <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4 text-white">
+
+            <div>
+              <h3 class="text-xl font-black">
+                Green Field Viewing Hub
+              </h3>
+
+              <p class="mt-1 text-xs text-slate-200">
+                Tarauni LGA · Hadejia Road
+              </p>
+            </div>
+
+            <div class="rounded-xl bg-black/30 px-3 py-2 text-center backdrop-blur">
+
+              <span class="block text-lg font-black">
+                14
+              </span>
+
+              <span class="text-[10px] uppercase tracking-wider text-slate-200">
+                spaces
+              </span>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="p-5">
+
+          <div class="flex items-center justify-between text-xs font-semibold text-slate-500">
+
+            <span>
+              Capacity 120
+            </span>
+
+            <span class="text-amber-600">
+              88% booked
+            </span>
+
+          </div>
+
+          <div class="capacity-bar mt-2 h-2 overflow-hidden rounded-full bg-slate-100">
+            <span style="width:88%"></span>
+          </div>
+
+          <div class="mt-5 flex items-center justify-between gap-3">
+
+            <span class="inline-flex items-center gap-2 text-sm font-bold text-amber-700">
+              <span class="h-2 w-2 rounded-full bg-amber-500"></span>
+              Filling fast
+            </span>
+
+            <a
+              href="booking.html"
+              class="animated-button rounded-xl bg-slate-950 px-4 py-3 text-sm font-black text-white hover:bg-emerald-600"
+            >
+              Book Now
+            </a>
+
+          </div>
+
+        </div>
+      </article>
+
+
+      <!-- =================================================
+           CENTER 4
+      ================================================== -->
+      <article class="center-card reveal rounded-[1.6rem] border border-slate-200 bg-white shadow-sm">
+
+        <div class="relative h-44 overflow-hidden">
+
+          <img
+            class="center-img h-full w-full object-cover"
+            src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=1000&q=80"
+            alt="Stadium crowd at Fans Zone Kano"
+            loading="lazy"
+          />
+
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+
+          <div class="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-black text-emerald-700 backdrop-blur">
+            Verified Center
+          </div>
+
+          <div class="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4 text-white">
+
+            <div>
+              <h3 class="text-xl font-black">
+                Fans Zone Kano
+              </h3>
+
+              <p class="mt-1 text-xs text-slate-200">
+                Fagge LGA · France Road
+              </p>
+            </div>
+
+            <div class="rounded-xl bg-black/30 px-3 py-2 text-center backdrop-blur">
+
+              <span class="block text-lg font-black">
+                6
+              </span>
+
+              <span class="text-[10px] uppercase tracking-wider text-slate-200">
+                spaces
+              </span>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="p-5">
+
+          <div class="flex items-center justify-between text-xs font-semibold text-slate-500">
+
+            <span>
+              Capacity 100
+            </span>
+
+            <span class="text-red-600">
+              94% booked
+            </span>
+
+          </div>
+
+          <div class="capacity-bar mt-2 h-2 overflow-hidden rounded-full bg-slate-100">
+            <span style="width:94%"></span>
+          </div>
+
+          <div class="mt-5 flex items-center justify-between gap-3">
+
+            <span class="inline-flex items-center gap-2 text-sm font-bold text-red-700">
+              <span class="h-2 w-2 rounded-full bg-red-500"></span>
+              Almost full
+            </span>
+
+            <a
+              href="booking.html"
+              class="animated-button rounded-xl bg-slate-950 px-4 py-3 text-sm font-black text-white hover:bg-emerald-600"
+            >
+              Book Now
+            </a>
+
+          </div>
+
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+
+  <!-- =====================================================
+       SIDEBAR
+  ====================================================== -->
+  <aside class="space-y-6">
+
+    <div class="reveal sticky top-28 rounded-[1.7rem] bg-slate-950 p-6 text-white shadow-2xl shadow-slate-950/15">
+
+      <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-400/20">
+
+        <svg
+          class="h-6 w-6"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          aria-hidden="true"
+        >
+          <path d="M6 3h12a2 2 0 0 1 2 2v4a3 3 0 0 0 0 6v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-4a3 3 0 0 0 0-6V5a2 2 0 0 1 2-2Z"/>
+          <path d="M9 8h6M9 12h6M9 16h4"/>
+        </svg>
+
+      </div>
+
+      <p class="mt-5 text-xs font-black uppercase tracking-[.18em] text-emerald-400">
+        Simple booking
+      </p>
+
+      <h3 class="mt-2 text-2xl font-black">
+        Reserve your place in minutes.
+      </h3>
+
+      <p class="mt-3 text-sm leading-6 text-slate-300">
+        Select a center, choose the number of attendees, submit your request, and receive your digital ticket after approval.
+      </p>
+
+      <a
+        href="booking.html"
+        class="animated-button mt-6 block rounded-xl bg-emerald-500 px-5 py-3.5 text-center text-sm font-black text-white hover:bg-emerald-400"
+      >
+        Start Booking
+      </a>
+
+
+      <!-- Booking Information -->
+      <div class="mt-6 border-t border-white/10 pt-5">
+
+        <h4 class="text-sm font-black">
+          Booking information
+        </h4>
+
+        <div class="mt-4 space-y-3 text-sm text-slate-300">
+
+          <p class="flex gap-3">
+            <span class="font-black text-emerald-400">
+              ✓
+            </span>
+
+            <span>
+              Capacity is checked before approval.
+            </span>
+          </p>
+
+          <p class="flex gap-3">
+            <span class="font-black text-emerald-400">
+              ✓
+            </span>
+
+            <span>
+              Approved bookings receive a unique digital ticket.
+            </span>
+          </p>
+
+          <p class="flex gap-3">
+            <span class="font-black text-emerald-400">
+              ✓
+            </span>
+
+            <span>
+              Each ticket can only be checked in once.
+            </span>
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+  </aside>
+
+</div>
+
+
+  </main>
+
+  <!-- =====================================================
+       CTA
+  ====================================================== -->
+
+  <section class="relative overflow-hidden bg-emerald-700 py-16 text-white">
+
+
+<div
+  class="absolute inset-0 opacity-10"
+  style="background-image:radial-gradient(circle at 20% 20%,white 0 1px,transparent 1px);background-size:24px 24px"
+></div>
+
+<div class="relative mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+
+  <p class="text-sm font-black uppercase tracking-[.2em] text-emerald-200">
+    Football brings us together
+  </p>
+
+  <h2 class="mx-auto mt-4 max-w-3xl text-3xl font-black tracking-tight sm:text-4xl">
+    Don't just watch the match. Experience it.
+  </h2>
+
+  <p class="mx-auto mt-5 max-w-2xl leading-7 text-emerald-50">
+    Find a registered viewing center and enjoy the atmosphere of match day with fellow football supporters.
+  </p>
+
+  <a
+    href="viewing-centers.html"
+    class="animated-button mt-7 inline-block rounded-full bg-white px-7 py-4 text-sm font-black text-emerald-700"
+  >
+    Explore Viewing Centers
+  </a>
+
+</div>
+
+
+  </section>
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="bg-slate-950 py-10 text-slate-400">
+
+
+<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+
+  <div class="flex flex-col gap-6 border-b border-white/10 pb-8 md:flex-row md:items-center md:justify-between">
+
+    <div>
+      <h3 class="text-lg font-black text-white">
+        Football View
+      </h3>
+
+      <p class="mt-2 text-sm">
+        Connecting football supporters across Kano State.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap gap-5 text-sm">
+
+      <a
+        href="index.html"
+        class="transition hover:text-white"
+      >
+        Home
+      </a>
+
+      <a
+        href="matches.html"
+        class="transition hover:text-white"
+      >
+        Matches
+      </a>
+
+      <a
+        href="viewing-centers.html"
+        class="transition hover:text-white"
+      >
+        Viewing Centers
+      </a>
+
+      <a
+        href="login.html"
+        class="transition hover:text-white"
+      >
+        Login
+      </a>
+
+    </div>
+
+  </div>
+
+  <p class="pt-6 text-xs">
+    © 2026 Football View. Built for football supporters across Kano State.
+  </p>
+
+</div>
+```
+
+  </footer>
+
+  <!-- =====================================================
+       SHARED JAVASCRIPT
+  ====================================================== -->
+
+  <script src="assets/js/app.js"></script>
+
+  <script>
+    /* =====================================================
+       Mobile Menu Accessibility
+    ====================================================== */
+
+    const menuButton = document.getElementById("mobileMenuButton");
+    const menu = document.getElementById("mobileMenu");
+
+    if (menuButton && menu) {
+
+      menuButton.addEventListener("click", () => {
+
+        const isOpen = !menu.classList.contains("hidden");
+
+        menuButton.setAttribute(
+          "aria-expanded",
+          String(!isOpen)
+        );
+
+        menuButton.setAttribute(
+          "aria-label",
+          isOpen ? "Open menu" : "Close menu"
+        );
+
+      });
+
+    }
+
+
+    /* =====================================================
+       Scroll Reveal Animation
+    ====================================================== */
+
+    const revealItems = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+
+          entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("show");
+
+              revealObserver.unobserve(entry.target);
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+
+      revealItems.forEach((item, index) => {
+
+        item.style.transitionDelay =
+          `${Math.min(index * 70, 280)}ms`;
+
+        revealObserver.observe(item);
+
+      });
+
+    } else {
+
+      /* Fallback for older browsers */
+      revealItems.forEach((item) => {
+        item.classList.add("show");
+      });
+
+    }
+
+
+    /* =====================================================
+       Demo Match Countdown
+       Next Saturday at 7:00 PM
+    ====================================================== */
+
+    const countdown = document.getElementById("countdown");
+
+    if (countdown) {
+
+      function getNextSaturday7pm() {
+
+        const now = new Date();
+        const target = new Date(now);
+
+        const day = now.getDay();
+
+        let add = (6 - day + 7) % 7;
+
+        if (add === 0 && now.getHours() >= 19) {
+          add = 7;
+        }
+
+        target.setDate(
+          now.getDate() + add
+        );
+
+        target.setHours(19, 0, 0, 0);
+
+        return target;
+      }
+
+
+      const target = getNextSaturday7pm();
+
+
+      function updateCountdown() {
+
+        const diff = Math.max(
+          0,
+          target - new Date()
+        );
+
+        const days = Math.floor(
+          diff / 86400000
+        );
+
+        const hours = Math.floor(
+          (diff % 86400000) / 3600000
+        );
+
+        const mins = Math.floor(
+          (diff % 3600000) / 60000
+        );
+
+        countdown.textContent =
+          `${days}d ${hours}h ${mins}m to kick-off`;
+
+      }
+
+
+      updateCountdown();
+
+      setInterval(
+        updateCountdown,
+        60000
+      );
+
+    }
+  </script>
+
+</body>
+</html>

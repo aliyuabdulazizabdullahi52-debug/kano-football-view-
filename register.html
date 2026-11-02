@@ -1,0 +1,1805 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Create your Football View account and start planning your football matchday experience across Kano State."
+  >
+
+  <meta
+    name="theme-color"
+    content="#020617"
+  >
+
+  <title>Create Account | Football View</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Shared CSS -->
+  <link
+    rel="stylesheet"
+    href="assets/css/app.css"
+  >
+</head>
+
+
+<body class="bg-slate-50 text-slate-900 page-enter">
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header
+  id="navbar"
+  class="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-slate-950/90 backdrop-blur-xl"
+>
+
+  <nav
+    class="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"
+  >
+
+    <!-- Logo -->
+
+    <a
+      href="index.html"
+      class="group flex items-center gap-3"
+      aria-label="Football View home"
+    >
+
+      <span
+        class="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-500 shadow-lg shadow-emerald-500/20 transition duration-300 group-hover:scale-105 group-hover:rotate-3"
+      >
+
+        <img
+          src="https://icons.iconarchive.com/icons/pictogrammers/material/128/football-icon.png"
+          alt=""
+          class="h-7 w-7 object-contain"
+        >
+
+      </span>
+
+
+      <span class="leading-none">
+
+        <span
+          class="block text-base font-black tracking-tight text-white"
+        >
+          FOOTBALL VIEW
+        </span>
+
+        <span
+          class="mt-1 block text-[9px] font-semibold uppercase tracking-[0.22em] text-slate-400"
+        >
+          Kano State
+        </span>
+
+      </span>
+
+    </a>
+
+
+    <!-- Desktop Navigation -->
+
+    <div
+      class="hidden items-center gap-8 lg:flex"
+    >
+
+      <a
+        href="index.html"
+        class="text-sm font-medium text-slate-300 transition hover:text-white"
+      >
+        Home
+      </a>
+
+      <a
+        href="matches.html"
+        class="text-sm font-medium text-slate-300 transition hover:text-white"
+      >
+        Matches
+      </a>
+
+      <a
+        href="viewing-centers.html"
+        class="text-sm font-medium text-slate-300 transition hover:text-white"
+      >
+        Viewing Centers
+      </a>
+
+      <a
+        href="index.html#how-it-works"
+        class="text-sm font-medium text-slate-300 transition hover:text-white"
+      >
+        How It Works
+      </a>
+
+    </div>
+
+
+    <!-- Sign In -->
+
+    <div class="hidden sm:block">
+
+      <a
+        href="login.html"
+        class="animated-button inline-flex items-center rounded-xl border border-white/10 bg-white/5 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-white/10"
+      >
+        Sign In
+      </a>
+
+    </div>
+
+
+    <!-- Mobile Menu Button -->
+
+    <button
+      id="mobileMenuButton"
+      type="button"
+      class="rounded-lg p-2 text-slate-300 transition hover:bg-white/10 hover:text-white sm:hidden"
+      aria-label="Open navigation"
+      aria-controls="mobileMenu"
+      aria-expanded="false"
+    >
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        aria-hidden="true"
+      >
+
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="1.8"
+          d="M4 6h16M4 12h16M4 18h16"
+        />
+
+      </svg>
+
+    </button>
+
+  </nav>
+
+
+  <!-- Mobile Menu -->
+
+  <div
+    id="mobileMenu"
+    class="hidden border-t border-white/10 bg-slate-950 px-4 pb-5 pt-4 sm:hidden"
+  >
+
+    <div class="space-y-1">
+
+      <a
+        href="index.html"
+        class="block rounded-lg px-4 py-3 text-sm font-medium text-slate-300 transition hover:bg-white/10 hover:text-white"
+      >
+        Home
+      </a>
+
+      <a
+        href="matches.html"
+        class="block rounded-lg px-4 py-3 text-sm font-medium text-slate-300 transition hover:bg-white/10 hover:text-white"
+      >
+        Matches
+      </a>
+
+      <a
+        href="viewing-centers.html"
+        class="block rounded-lg px-4 py-3 text-sm font-medium text-slate-300 transition hover:bg-white/10 hover:text-white"
+      >
+        Viewing Centers
+      </a>
+
+      <a
+        href="index.html#how-it-works"
+        class="block rounded-lg px-4 py-3 text-sm font-medium text-slate-300 transition hover:bg-white/10 hover:text-white"
+      >
+        How It Works
+      </a>
+
+
+      <div class="mt-3">
+
+        <a
+          href="login.html"
+          class="block rounded-lg bg-emerald-500 px-4 py-3 text-center text-sm font-bold text-white transition hover:bg-emerald-400"
+        >
+          Sign In
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="relative min-h-screen overflow-hidden bg-slate-950">
+
+  <!-- Background Image -->
+
+  <div class="absolute inset-0">
+
+    <img
+      src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=2200&q=90"
+      alt=""
+      class="h-full w-full object-cover"
+    >
+
+    <div
+      class="absolute inset-0 bg-slate-950/85"
+    ></div>
+
+    <div
+      class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950/95 to-emerald-950/70"
+    ></div>
+
+  </div>
+
+
+  <!-- Decorative Glow -->
+
+  <div
+    class="absolute -left-40 top-40 h-[450px] w-[450px] rounded-full bg-emerald-500/10 blur-3xl"
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="absolute -right-40 bottom-20 h-[500px] w-[500px] rounded-full bg-emerald-400/10 blur-3xl"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- Floating Football -->
+
+  <div
+    class="floating-football right-[5%] top-[18%] text-[120px]"
+    aria-hidden="true"
+  >
+    ⚽
+  </div>
+
+
+  <!-- Stadium SVG Decoration -->
+
+  <svg
+    class="absolute bottom-0 right-0 h-80 w-[38rem] opacity-[0.07]"
+    viewBox="0 0 500 260"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+
+    <circle
+      cx="390"
+      cy="150"
+      r="105"
+      stroke="white"
+      stroke-width="2"
+    />
+
+    <circle
+      cx="390"
+      cy="150"
+      r="62"
+      stroke="white"
+      stroke-width="1"
+    />
+
+    <path
+      d="M285 150H495"
+      stroke="white"
+      stroke-width="1"
+    />
+
+    <path
+      d="M390 45V255"
+      stroke="white"
+      stroke-width="1"
+    />
+
+  </svg>
+
+
+
+  <!-- =================================================
+       REGISTRATION AREA
+  ================================================= -->
+
+  <section
+    class="relative z-10 px-4 pb-20 pt-32 sm:px-6 lg:px-8"
+  >
+
+    <div class="mx-auto max-w-6xl">
+
+      <div
+        class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center"
+      >
+
+
+        <!-- =================================================
+             LEFT CONTENT
+        ================================================= -->
+
+        <div
+          class="page-enter hidden lg:block"
+        >
+
+          <div
+            class="inline-flex items-center gap-3 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-4 py-2.5 backdrop-blur"
+          >
+
+            <span
+              class="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"
+            ></span>
+
+            <span
+              class="text-xs font-bold uppercase tracking-[0.18em] text-emerald-300"
+            >
+              Join Football View
+            </span>
+
+          </div>
+
+
+          <h1
+            class="mt-7 max-w-xl text-5xl font-black leading-[1] tracking-[-0.04em] text-white xl:text-6xl"
+          >
+
+            Your next
+            <span class="text-emerald-400">
+              matchday
+            </span>
+            starts here.
+
+          </h1>
+
+
+          <p
+            class="mt-6 max-w-lg text-base leading-8 text-slate-300"
+          >
+            Create your Football View account to discover matches,
+            find registered viewing centers and plan where you will
+            watch your next game across Kano State.
+          </p>
+
+
+          <!-- Benefits -->
+
+          <div class="mt-9 space-y-5">
+
+
+            <!-- Benefit 1 -->
+
+            <div class="flex items-start gap-4">
+
+              <div
+                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-500/10 ring-1 ring-emerald-400/20"
+              >
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 text-emerald-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.8"
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 3c-2.755 0-5.29.925-7.298 2.484M5.298 5.484A11.955 11.955 0 003 12c0 4.97 3.03 9.233 7.298 11.016M18.702 5.484A11.955 11.955 0 0021 12c0 4.97-3.03 9.233-7.298 11.016"
+                  />
+
+                </svg>
+
+              </div>
+
+              <div>
+
+                <h3 class="font-bold text-white">
+                  Discover registered centers
+                </h3>
+
+                <p class="mt-1 text-sm leading-6 text-slate-400">
+                  Find participating viewing centers around Kano.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <!-- Benefit 2 -->
+
+            <div class="flex items-start gap-4">
+
+              <div
+                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-500/10 ring-1 ring-emerald-400/20"
+              >
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 text-emerald-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.8"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+
+                </svg>
+
+              </div>
+
+              <div>
+
+                <h3 class="font-bold text-white">
+                  Plan your matchday
+                </h3>
+
+                <p class="mt-1 text-sm leading-6 text-slate-400">
+                  Check matches and prepare before kickoff.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <!-- Benefit 3 -->
+
+            <div class="flex items-start gap-4">
+
+              <div
+                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-500/10 ring-1 ring-emerald-400/20"
+              >
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 text-emerald-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.8"
+                    d="M12 11c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm0 0c-3.314 0-6 1.343-6 3v2h12v-2c0-1.657-2.686-3-6-3z"
+                  />
+
+                </svg>
+
+              </div>
+
+              <div>
+
+                <h3 class="font-bold text-white">
+                  One account, one experience
+                </h3>
+
+                <p class="mt-1 text-sm leading-6 text-slate-400">
+                  Keep your matchday activities connected in one place.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             REGISTRATION CARD
+        ================================================= -->
+
+        <div class="slide-up">
+
+          <div
+            class="animated-card overflow-hidden rounded-[2rem] border border-white/10 bg-white shadow-2xl shadow-black/30"
+          >
+
+
+            <!-- Card Header -->
+
+            <div
+              class="border-b border-slate-200 px-6 py-7 sm:px-9"
+            >
+
+              <div class="flex items-center justify-between gap-5">
+
+                <div>
+
+                  <p
+                    class="text-xs font-black uppercase tracking-[0.18em] text-emerald-600"
+                  >
+                    Create account
+                  </p>
+
+                  <h2
+                    class="mt-2 text-3xl font-black tracking-tight text-slate-950"
+                  >
+                    Join Football View
+                  </h2>
+
+                  <p
+                    class="mt-2 text-sm leading-6 text-slate-500"
+                  >
+                    Create your account in a few simple steps.
+                  </p>
+
+                </div>
+
+
+                <div
+                  class="hidden h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-emerald-50 sm:flex"
+                >
+
+                  <img
+                    src="https://icons.iconarchive.com/icons/pictogrammers/material/128/football-icon.png"
+                    alt=""
+                    class="h-9 w-9"
+                  >
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FORM
+            ================================================= -->
+
+            <form
+              id="registerForm"
+              class="px-6 py-7 sm:px-9"
+              novalidate
+            >
+
+
+              <!-- Full Name -->
+
+              <div class="slide-up slide-up-delay-1">
+
+                <label
+                  for="fullName"
+                  class="block text-sm font-bold text-slate-800"
+                >
+                  Full Name
+                </label>
+
+                <div class="relative mt-2">
+
+                  <span
+                    class="pointer-events-none absolute inset-y-0 left-0 flex w-11 items-center justify-center text-slate-400"
+                  >
+
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-5 w-5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="1.7"
+                        d="M15 19a6 6 0 00-12 0m6-8a4 4 0 100-8 4 4 0 000 8zm7-3v6m3-3h-6"
+                      />
+
+                    </svg>
+
+                  </span>
+
+                  <input
+                    id="fullName"
+                    name="fullName"
+                    type="text"
+                    autocomplete="name"
+                    placeholder="Enter your full name"
+                    required
+                    class="h-12 w-full rounded-xl border border-slate-200 bg-slate-50 pl-11 pr-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-emerald-500 focus:bg-white focus:ring-4 focus:ring-emerald-500/10"
+                  >
+
+                </div>
+
+                <p
+                  id="fullNameError"
+                  class="mt-1.5 hidden text-xs font-medium text-red-500"
+                  role="alert"
+                ></p>
+
+              </div>
+
+
+
+              <!-- Email + Phone -->
+
+              <div
+                class="mt-5 grid gap-5 sm:grid-cols-2 slide-up slide-up-delay-1"
+              >
+
+                <!-- Email -->
+
+                <div>
+
+                  <label
+                    for="email"
+                    class="block text-sm font-bold text-slate-800"
+                  >
+                    Email Address
+                  </label>
+
+                  <div class="relative mt-2">
+
+                    <span
+                      class="pointer-events-none absolute inset-y-0 left-0 flex w-11 items-center justify-center text-slate-400"
+                    >
+
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                      >
+
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.7"
+                          d="M3 6h18v12H3V6zm0 0l9 6 9-6"
+                        />
+
+                      </svg>
+
+                    </span>
+
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      autocomplete="email"
+                      placeholder="you@example.com"
+                      required
+                      class="h-12 w-full rounded-xl border border-slate-200 bg-slate-50 pl-11 pr-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-emerald-500 focus:bg-white focus:ring-4 focus:ring-emerald-500/10"
+                    >
+
+                  </div>
+
+                  <p
+                    id="emailError"
+                    class="mt-1.5 hidden text-xs font-medium text-red-500"
+                    role="alert"
+                  ></p>
+
+                </div>
+
+
+                <!-- Phone -->
+
+                <div>
+
+                  <label
+                    for="phone"
+                    class="block text-sm font-bold text-slate-800"
+                  >
+                    Phone Number
+                  </label>
+
+                  <div class="relative mt-2">
+
+                    <span
+                      class="pointer-events-none absolute inset-y-0 left-0 flex w-11 items-center justify-center text-slate-400"
+                    >
+
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                      >
+
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.7"
+                          d="M6.5 3h3L11 7 8.5 8.5a14 14 0 006 6L16 12l4 1.5v3c0 1.1-.9 2-2 2C10.268 18.5 5.5 13.732 5.5 6c0-1.657.343-3 1-3z"
+                        />
+
+                      </svg>
+
+                    </span>
+
+                    <input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      autocomplete="tel"
+                      placeholder="08012345678"
+                      required
+                      inputmode="tel"
+                      class="h-12 w-full rounded-xl border border-slate-200 bg-slate-50 pl-11 pr-4 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-emerald-500 focus:bg-white focus:ring-4 focus:ring-emerald-500/10"
+                    >
+
+                  </div>
+
+                  <p
+                    id="phoneError"
+                    class="mt-1.5 hidden text-xs font-medium text-red-500"
+                    role="alert"
+                  ></p>
+
+                </div>
+
+              </div>
+
+
+
+              <!-- Passwords -->
+
+              <div
+                class="mt-5 grid gap-5 sm:grid-cols-2 slide-up slide-up-delay-2"
+              >
+
+                <!-- Password -->
+
+                <div>
+
+                  <label
+                    for="password"
+                    class="block text-sm font-bold text-slate-800"
+                  >
+                    Password
+                  </label>
+
+                  <div class="relative mt-2">
+
+                    <span
+                      class="pointer-events-none absolute inset-y-0 left-0 flex w-11 items-center justify-center text-slate-400"
+                    >
+
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                      >
+
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.7"
+                          d="M7 10V8a5 5 0 0110 0v2m-9 0h8a2 2 0 012 2v7H6v-7a2 2 0 012-2z"
+                        />
+
+                      </svg>
+
+                    </span>
+
+                    <input
+                      id="password"
+                      name="password"
+                      type="password"
+                      autocomplete="new-password"
+                      placeholder="Create a password"
+                      required
+                      minlength="6"
+                      class="h-12 w-full rounded-xl border border-slate-200 bg-slate-50 pl-11 pr-11 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-emerald-500 focus:bg-white focus:ring-4 focus:ring-emerald-500/10"
+                    >
+
+                    <button
+                      type="button"
+                      class="password-toggle absolute inset-y-0 right-0 flex w-11 items-center justify-center text-slate-400 transition hover:text-slate-700"
+                      data-target="password"
+                      aria-label="Show password"
+                      aria-pressed="false"
+                    >
+
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="eye-open h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                      >
+
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.7"
+                          d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6zm9.5 3a3 3 0 100-6 3 3 0 000 6z"
+                        />
+
+                      </svg>
+
+                    </button>
+
+                  </div>
+
+                  <p
+                    id="passwordError"
+                    class="mt-1.5 hidden text-xs font-medium text-red-500"
+                    role="alert"
+                  ></p>
+
+                </div>
+
+
+                <!-- Confirm Password -->
+
+                <div>
+
+                  <label
+                    for="confirmPassword"
+                    class="block text-sm font-bold text-slate-800"
+                  >
+                    Confirm Password
+                  </label>
+
+                  <div class="relative mt-2">
+
+                    <span
+                      class="pointer-events-none absolute inset-y-0 left-0 flex w-11 items-center justify-center text-slate-400"
+                    >
+
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                      >
+
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.7"
+                          d="M9 12l2 2 4-4m5-2V8a5 5 0 00-10 0v2m-1 0h8a2 2 0 012 2v7H5v-7a2 2 0 012-2z"
+                        />
+
+                      </svg>
+
+                    </span>
+
+                    <input
+                      id="confirmPassword"
+                      name="confirmPassword"
+                      type="password"
+                      autocomplete="new-password"
+                      placeholder="Repeat your password"
+                      required
+                      class="h-12 w-full rounded-xl border border-slate-200 bg-slate-50 pl-11 pr-11 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-emerald-500 focus:bg-white focus:ring-4 focus:ring-emerald-500/10"
+                    >
+
+                    <button
+                      type="button"
+                      class="password-toggle absolute inset-y-0 right-0 flex w-11 items-center justify-center text-slate-400 transition hover:text-slate-700"
+                      data-target="confirmPassword"
+                      aria-label="Show password"
+                      aria-pressed="false"
+                    >
+
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="eye-open h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                      >
+
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.7"
+                          d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6zm9.5 3a3 3 0 100-6 3 3 0 000 6z"
+                        />
+
+                      </svg>
+
+                    </button>
+
+                  </div>
+
+                  <p
+                    id="confirmPasswordError"
+                    class="mt-1.5 hidden text-xs font-medium text-red-500"
+                    role="alert"
+                  ></p>
+
+                </div>
+
+              </div>
+
+
+
+              <!-- =================================================
+                   ACCOUNT TYPE
+              ================================================== -->
+
+              <div
+                class="mt-6 slide-up slide-up-delay-2"
+              >
+
+                <label class="block text-sm font-bold text-slate-800">
+                  What will you use Football View for?
+                </label>
+
+                <div
+                  class="mt-3 grid gap-3 sm:grid-cols-2"
+                >
+
+
+                  <!-- Fan -->
+
+                  <label
+                    class="account-option group relative cursor-pointer"
+                  >
+
+                    <input
+                      type="radio"
+                      name="accountType"
+                      value="fan"
+                      checked
+                      class="peer sr-only"
+                    >
+
+                    <div
+                      class="rounded-xl border border-slate-200 bg-slate-50 p-4 transition group-hover:border-emerald-300 peer-checked:border-emerald-500 peer-checked:bg-emerald-50 peer-checked:ring-2 peer-checked:ring-emerald-500/10"
+                    >
+
+                      <div class="flex items-center gap-3">
+
+                        <div
+                          class="flex h-10 w-10 items-center justify-center rounded-lg bg-white text-emerald-600 shadow-sm"
+                        >
+
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-5 w-5"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            aria-hidden="true"
+                          >
+
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="1.7"
+                              d="M12 21a9 9 0 100-18 9 9 0 000 18zm0 0c2.5-2.5 4-5.5 4-9s-1.5-6.5-4-9c-2.5 2.5-4 6.5-4 9s1.5 6.5 4 9zM3 12h18"
+                            />
+
+                          </svg>
+
+                        </div>
+
+                        <div>
+
+                          <p class="text-sm font-black text-slate-900">
+                            Football Fan
+                          </p>
+
+                          <p class="mt-0.5 text-xs text-slate-500">
+                            Discover and book matches
+                          </p>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </label>
+
+
+
+                  <!-- Viewing Center -->
+
+                  <label
+                    class="account-option group relative cursor-pointer"
+                  >
+
+                    <input
+                      type="radio"
+                      name="accountType"
+                      value="center_owner"
+                      class="peer sr-only"
+                    >
+
+                    <div
+                      class="rounded-xl border border-slate-200 bg-slate-50 p-4 transition group-hover:border-emerald-300 peer-checked:border-emerald-500 peer-checked:bg-emerald-50 peer-checked:ring-2 peer-checked:ring-emerald-500/10"
+                    >
+
+                      <div class="flex items-center gap-3">
+
+                        <div
+                          class="flex h-10 w-10 items-center justify-center rounded-lg bg-white text-emerald-600 shadow-sm"
+                        >
+
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-5 w-5"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            aria-hidden="true"
+                          >
+
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="1.7"
+                              d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5M9 9h.01M12 9h.01M15 9h.01M9 12h.01M12 12h.01M15 12h.01"
+                            />
+
+                          </svg>
+
+                        </div>
+
+                        <div>
+
+                          <p class="text-sm font-black text-slate-900">
+                            Viewing Center
+                          </p>
+
+                          <p class="mt-0.5 text-xs text-slate-500">
+                            Register and manage your center
+                          </p>
+
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </label>
+
+                </div>
+
+              </div>
+
+
+
+              <!-- =================================================
+                   TERMS
+              ================================================== -->
+
+              <div
+                class="mt-6 flex items-start gap-3"
+              >
+
+                <input
+                  id="terms"
+                  name="terms"
+                  type="checkbox"
+                  required
+                  class="mt-1 h-4 w-4 rounded border-slate-300 text-emerald-600 focus:ring-emerald-500"
+                >
+
+                <label
+                  for="terms"
+                  class="text-xs leading-5 text-slate-500"
+                >
+
+                  I agree to the Football View
+
+                  <a
+                    href="#"
+                    id="termsLink"
+                    class="font-bold text-emerald-600 hover:text-emerald-700"
+                  >
+                    terms of use
+                  </a>
+
+                  and understand that viewing center registrations
+                  may require verification.
+
+                </label>
+
+              </div>
+
+              <p
+                id="termsError"
+                class="mt-1.5 hidden text-xs font-medium text-red-500"
+                role="alert"
+              ></p>
+
+
+
+              <!-- Form Message -->
+
+              <div
+                id="formMessage"
+                class="mt-5 hidden rounded-xl border px-4 py-3 text-sm"
+                role="alert"
+                aria-live="polite"
+              ></div>
+
+
+
+              <!-- Submit -->
+
+              <button
+                id="registerButton"
+                type="submit"
+                class="animated-button mt-6 flex h-13 w-full items-center justify-center gap-3 rounded-xl bg-emerald-500 px-6 py-3.5 text-sm font-black text-white hover:bg-emerald-400 disabled:cursor-not-allowed disabled:opacity-60"
+              >
+
+                <span>
+                  Create My Account
+                </span>
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  />
+
+                </svg>
+
+              </button>
+
+
+
+              <!-- Login -->
+
+              <p
+                class="mt-6 text-center text-sm text-slate-500"
+              >
+
+                Already have an account?
+
+                <a
+                  href="login.html"
+                  class="font-black text-emerald-600 transition hover:text-emerald-700"
+                >
+                  Sign in
+                </a>
+
+              </p>
+
+            </form>
+
+          </div>
+
+
+          <!-- Security Note -->
+
+          <div
+            class="mt-5 flex items-center justify-center gap-2 text-xs text-slate-400"
+          >
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4 text-emerald-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.7"
+                d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7l7-4z"
+              />
+
+            </svg>
+
+            Your account information is handled securely.
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer
+  class="border-t border-slate-800 bg-slate-950 text-white"
+>
+
+  <div
+    class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8"
+  >
+
+    <div
+      class="flex flex-col gap-5 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left"
+    >
+
+      <!-- Footer Brand -->
+
+      <a
+        href="index.html"
+        class="inline-flex items-center justify-center gap-3 sm:justify-start"
+        aria-label="Football View home"
+      >
+
+        <span
+          class="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-500"
+        >
+
+          <img
+            src="https://icons.iconarchive.com/icons/pictogrammers/material/128/football-icon.png"
+            alt=""
+            class="h-5 w-5"
+          >
+
+        </span>
+
+        <span>
+
+          <span
+            class="block text-sm font-black"
+          >
+            FOOTBALL VIEW
+          </span>
+
+          <span
+            class="text-[9px] font-semibold uppercase tracking-[0.18em] text-slate-500"
+          >
+            Kano State
+          </span>
+
+        </span>
+
+      </a>
+
+
+      <p class="text-xs text-slate-500">
+        © 2026 Football View. Built for football supporters across Kano State.
+      </p>
+
+
+      <p class="text-xs text-slate-500">
+        Bayero University, Kano. Final Year Project (SWE)
+      </p>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     PAGE JAVASCRIPT
+===================================================== -->
+
+<script>
+
+  /* =========================================
+     MOBILE NAVIGATION
+  ========================================= */
+
+  const mobileMenuButton =
+    document.getElementById("mobileMenuButton");
+
+  const mobileMenu =
+    document.getElementById("mobileMenu");
+
+
+  if (mobileMenuButton && mobileMenu) {
+
+    mobileMenuButton.addEventListener("click", () => {
+
+      const isOpen =
+        !mobileMenu.classList.contains("hidden");
+
+      mobileMenu.classList.toggle("hidden");
+
+      mobileMenuButton.setAttribute(
+        "aria-expanded",
+        String(!isOpen)
+      );
+
+      mobileMenuButton.setAttribute(
+        "aria-label",
+        isOpen ? "Open navigation" : "Close navigation"
+      );
+
+    });
+
+
+    /* Close mobile menu after selecting a link */
+
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+
+      link.addEventListener("click", () => {
+
+        mobileMenu.classList.add("hidden");
+
+        mobileMenuButton.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+        mobileMenuButton.setAttribute(
+          "aria-label",
+          "Open navigation"
+        );
+
+      });
+
+    });
+
+  }
+
+
+
+  /* =========================================
+     PASSWORD VISIBILITY
+  ========================================= */
+
+  document
+    .querySelectorAll(".password-toggle")
+    .forEach((button) => {
+
+      button.addEventListener("click", () => {
+
+        const targetId =
+          button.dataset.target;
+
+        const input =
+          document.getElementById(targetId);
+
+        if (!input) return;
+
+
+        const isHidden =
+          input.type === "password";
+
+
+        input.type =
+          isHidden ? "text" : "password";
+
+
+        button.setAttribute(
+          "aria-label",
+          isHidden ? "Hide password" : "Show password"
+        );
+
+
+        button.setAttribute(
+          "aria-pressed",
+          String(isHidden)
+        );
+
+      });
+
+    });
+
+
+
+  /* =========================================
+     FORM VALIDATION
+  ========================================= */
+
+  const registerForm =
+    document.getElementById("registerForm");
+
+  const formMessage =
+    document.getElementById("formMessage");
+
+  const registerButton =
+    document.getElementById("registerButton");
+
+
+  function showError(id, message) {
+
+    const element =
+      document.getElementById(id);
+
+    if (!element) return;
+
+    element.textContent =
+      message;
+
+    element.classList.remove("hidden");
+
+  }
+
+
+  function clearError(id) {
+
+    const element =
+      document.getElementById(id);
+
+    if (!element) return;
+
+    element.textContent = "";
+
+    element.classList.add("hidden");
+
+  }
+
+
+  function showFormMessage(message, type) {
+
+    if (!formMessage) return;
+
+
+    formMessage.textContent =
+      message;
+
+
+    formMessage.classList.remove(
+      "hidden",
+      "border-red-200",
+      "bg-red-50",
+      "text-red-700",
+      "border-emerald-200",
+      "bg-emerald-50",
+      "text-emerald-700"
+    );
+
+
+    if (type === "success") {
+
+      formMessage.classList.add(
+        "border-emerald-200",
+        "bg-emerald-50",
+        "text-emerald-700"
+      );
+
+    } else {
+
+      formMessage.classList.add(
+        "border-red-200",
+        "bg-red-50",
+        "text-red-700"
+      );
+
+    }
+
+  }
+
+
+
+  /* =========================================
+     REGISTRATION SUBMISSION
+     
+     Frontend only for now.
+     PHP/backend registration will be
+     connected later.
+  ========================================= */
+
+  if (registerForm) {
+
+    registerForm.addEventListener(
+      "submit",
+      (event) => {
+
+        event.preventDefault();
+
+
+        /* Clear previous errors */
+
+        [
+          "fullNameError",
+          "emailError",
+          "phoneError",
+          "passwordError",
+          "confirmPasswordError",
+          "termsError"
+        ].forEach(clearError);
+
+
+        formMessage.classList.add("hidden");
+
+
+        /* Get form values */
+
+        const fullName =
+          document
+            .getElementById("fullName")
+            .value
+            .trim();
+
+
+        const email =
+          document
+            .getElementById("email")
+            .value
+            .trim();
+
+
+        const phone =
+          document
+            .getElementById("phone")
+            .value
+            .trim();
+
+
+        const password =
+          document
+            .getElementById("password")
+            .value;
+
+
+        const confirmPassword =
+          document
+            .getElementById("confirmPassword")
+            .value;
+
+
+        const terms =
+          document
+            .getElementById("terms")
+            .checked;
+
+
+        let valid = true;
+
+
+
+        /* =====================================
+           FULL NAME
+        ===================================== */
+
+        if (fullName.length < 3) {
+
+          showError(
+            "fullNameError",
+            "Please enter your full name."
+          );
+
+          valid = false;
+
+        }
+
+
+
+        /* =====================================
+           EMAIL
+        ===================================== */
+
+        const emailPattern =
+          /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+        if (!emailPattern.test(email)) {
+
+          showError(
+            "emailError",
+            "Please enter a valid email address."
+          );
+
+          valid = false;
+
+        }
+
+
+
+        /* =====================================
+           PHONE
+        ===================================== */
+
+        const phoneDigits =
+          phone.replace(/\D/g, "");
+
+
+        if (
+          phoneDigits.length < 10 ||
+          phoneDigits.length > 15
+        ) {
+
+          showError(
+            "phoneError",
+            "Please enter a valid phone number."
+          );
+
+          valid = false;
+
+        }
+
+
+
+        /* =====================================
+           PASSWORD
+        ===================================== */
+
+        if (password.length < 6) {
+
+          showError(
+            "passwordError",
+            "Password must contain at least 6 characters."
+          );
+
+          valid = false;
+
+        }
+
+
+
+        /* =====================================
+           CONFIRM PASSWORD
+        ===================================== */
+
+        if (
+          confirmPassword.length === 0 ||
+          confirmPassword !== password
+        ) {
+
+          showError(
+            "confirmPasswordError",
+            "Passwords do not match."
+          );
+
+          valid = false;
+
+        }
+
+
+
+        /* =====================================
+           TERMS
+        ===================================== */
+
+        if (!terms) {
+
+          showError(
+            "termsError",
+            "Please accept the terms before continuing."
+          );
+
+          valid = false;
+
+        }
+
+
+
+        /* =====================================
+           VALIDATION RESULT
+        ===================================== */
+
+        if (!valid) {
+
+          showFormMessage(
+            "Please correct the highlighted fields and try again.",
+            "error"
+          );
+
+          return;
+
+        }
+
+
+
+        /* =====================================
+           FRONTEND SUCCESS
+           
+           Backend/PHP registration will be
+           connected later.
+        ===================================== */
+
+        showFormMessage(
+          "Your registration details are valid. Backend registration can now be connected.",
+          "success"
+        );
+
+
+        /* Temporarily disable button */
+
+        if (registerButton) {
+
+          registerButton.disabled = true;
+
+          setTimeout(() => {
+
+            registerButton.disabled = false;
+
+          }, 1200);
+
+        }
+
+      }
+    );
+
+  }
+
+
+
+  /* =========================================
+     TERMS LINK
+     
+     Placeholder until terms page exists.
+  ========================================= */
+
+  const termsLink =
+    document.getElementById("termsLink");
+
+
+  if (termsLink) {
+
+    termsLink.addEventListener("click", (event) => {
+
+      event.preventDefault();
+
+      showFormMessage(
+        "Terms of use will be added to Football View later.",
+        "error"
+      );
+
+    });
+
+  }
+
+</script>
+
+
+<!-- Shared JavaScript -->
+
+<script src="assets/js/app.js"></script>
+
+</body>
+</html>

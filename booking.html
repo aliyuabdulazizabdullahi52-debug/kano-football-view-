@@ -1,0 +1,2297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Book a Seat | Football View</title>
+
+  <meta
+    name="description"
+    content="Book your seat at a football viewing center in Kano State with Football View."
+  >
+
+  <meta
+    name="theme-color"
+    content="#020617"
+  >
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Shared Application Styles -->
+  <link
+    rel="stylesheet"
+    href="assets/css/app.css"
+  >
+</head>
+
+
+<body class="bg-slate-50 text-slate-900 page-enter">
+
+
+  <!-- =====================================================
+       NAVBAR
+  ====================================================== -->
+
+  <nav
+    id="navbar"
+    class="fixed top-0 left-0 right-0 z-50 bg-slate-950/90 backdrop-blur-xl border-b border-white/10 transition-all duration-300"
+  >
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="h-20 flex items-center justify-between">
+
+        <!-- Logo -->
+        <a
+          href="index.html"
+          class="flex items-center gap-3 group"
+        >
+
+          <div
+            class="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-400/20 flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300"
+          >
+
+            <img
+              src="https://icons.iconarchive.com/icons/pictogrammers/material/128/football-icon.png"
+              alt="Football View"
+              class="w-8 h-8 object-contain"
+            >
+
+          </div>
+
+          <div class="leading-none">
+
+            <div
+              class="text-white font-black tracking-[0.18em] text-sm sm:text-base"
+            >
+              FOOTBALL VIEW
+            </div>
+
+            <div
+              class="text-emerald-400 text-[10px] uppercase tracking-[0.28em] mt-1"
+            >
+              Kano State
+            </div>
+
+          </div>
+
+        </a>
+
+
+        <!-- Desktop Navigation -->
+        <div class="hidden lg:flex items-center gap-8">
+
+          <a
+            href="index.html"
+            class="nav-link text-sm font-medium text-slate-300 hover:text-white"
+          >
+            Home
+          </a>
+
+          <a
+            href="matches.html"
+            class="nav-link text-sm font-medium text-slate-300 hover:text-white"
+          >
+            Matches
+          </a>
+
+          <a
+            href="viewing-centers.html"
+            class="nav-link text-sm font-medium text-slate-300 hover:text-white"
+          >
+            Viewing Centers
+          </a>
+
+          <a
+            href="index.html#how-it-works"
+            class="nav-link text-sm font-medium text-slate-300 hover:text-white"
+          >
+            How It Works
+          </a>
+
+        </div>
+
+
+        <!-- Desktop Actions -->
+        <div class="hidden lg:flex items-center gap-3">
+
+          <a
+            href="login.html"
+            class="px-5 py-2.5 rounded-xl border border-white/15 text-white text-sm font-semibold hover:bg-white/10 transition"
+          >
+            Sign In
+          </a>
+
+          <a
+            href="register.html"
+            class="animated-button px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-sm font-bold"
+          >
+            Create Account
+          </a>
+
+        </div>
+
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobileMenuButton"
+          type="button"
+          class="lg:hidden w-11 h-11 rounded-xl border border-white/10 bg-white/5 text-white flex items-center justify-center hover:bg-white/10 transition"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+        >
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-6 h-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+
+          </svg>
+
+        </button>
+
+      </div>
+
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobileMenu"
+        class="hidden lg:hidden pb-5"
+      >
+
+        <div
+          class="rounded-2xl border border-white/10 bg-slate-900/95 p-3 space-y-1"
+        >
+
+          <a
+            href="index.html"
+            class="block rounded-xl px-4 py-3 text-slate-300 hover:bg-white/5 hover:text-white transition"
+          >
+            Home
+          </a>
+
+          <a
+            href="matches.html"
+            class="block rounded-xl px-4 py-3 text-slate-300 hover:bg-white/5 hover:text-white transition"
+          >
+            Matches
+          </a>
+
+          <a
+            href="viewing-centers.html"
+            class="block rounded-xl px-4 py-3 text-slate-300 hover:bg-white/5 hover:text-white transition"
+          >
+            Viewing Centers
+          </a>
+
+          <a
+            href="index.html#how-it-works"
+            class="block rounded-xl px-4 py-3 text-slate-300 hover:bg-white/5 hover:text-white transition"
+          >
+            How It Works
+          </a>
+
+          <div class="border-t border-white/10 my-2"></div>
+
+          <a
+            href="login.html"
+            class="block rounded-xl px-4 py-3 text-slate-300 hover:bg-white/5 hover:text-white transition"
+          >
+            Sign In
+          </a>
+
+          <a
+            href="register.html"
+            class="block rounded-xl px-4 py-3 bg-emerald-500 text-slate-950 font-bold text-center"
+          >
+            Create Account
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+
+  <!-- =====================================================
+       HERO
+  ====================================================== -->
+
+  <header
+    class="relative pt-20 bg-slate-950 overflow-hidden"
+  >
+
+    <div
+      class="absolute inset-0"
+    >
+
+      <img
+        src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=2200&q=85"
+        alt=""
+        class="w-full h-full object-cover opacity-30"
+      >
+
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/90 to-slate-950"
+      ></div>
+
+    </div>
+
+
+    <div
+      class="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-emerald-500/15 blur-3xl"
+    ></div>
+
+
+    <div
+      class="floating-football"
+    >
+      ⚽
+    </div>
+
+
+    <div
+      class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20"
+    >
+
+      <!-- Breadcrumb -->
+      <div
+        class="flex flex-wrap items-center gap-2 text-sm text-slate-400 mb-8"
+      >
+
+        <a
+          href="index.html"
+          class="hover:text-emerald-400 transition"
+        >
+          Home
+        </a>
+
+        <span>/</span>
+
+        <a
+          href="viewing-centers.html"
+          class="hover:text-emerald-400 transition"
+        >
+          Viewing Centers
+        </a>
+
+        <span>/</span>
+
+        <span class="text-white">
+          Booking
+        </span>
+
+      </div>
+
+
+      <div class="max-w-3xl">
+
+        <div
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 text-emerald-300 text-xs font-bold uppercase tracking-[0.2em]"
+        >
+
+          <span
+            class="w-2 h-2 rounded-full bg-emerald-400"
+          ></span>
+
+          Matchday Booking
+
+        </div>
+
+
+        <h1
+          class="mt-6 text-4xl sm:text-5xl font-black text-white leading-tight"
+        >
+          Reserve your
+          <span class="text-emerald-400">
+            matchday seat.
+          </span>
+        </h1>
+
+
+        <p
+          class="mt-5 text-lg text-slate-300 leading-relaxed max-w-2xl"
+        >
+          Select your match, choose a viewing center and reserve
+          the number of seats you need before matchday.
+        </p>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       BOOKING CONTENT
+  ====================================================== -->
+
+  <main
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16"
+  >
+
+    <div
+      class="grid grid-cols-1 lg:grid-cols-3 gap-8"
+    >
+
+
+      <!-- =================================================
+           LEFT / BOOKING FORM
+      ================================================== -->
+
+      <section
+        class="lg:col-span-2 space-y-6"
+      >
+
+
+        <!-- Selected Match -->
+        <div
+          class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden"
+        >
+
+          <div
+            class="px-6 py-5 border-b border-slate-100 flex items-center justify-between"
+          >
+
+            <div>
+
+              <p
+                class="text-xs font-bold uppercase tracking-[0.18em] text-emerald-600"
+              >
+                Step 1
+              </p>
+
+              <h2
+                class="mt-1 text-xl font-black text-slate-950"
+              >
+                Select Match
+              </h2>
+
+            </div>
+
+
+            <div
+              class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center"
+            >
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 6v6l4 2"
+                />
+
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="9"
+                />
+
+              </svg>
+
+            </div>
+
+          </div>
+
+
+          <div class="p-6">
+
+            <label
+              for="matchSelect"
+              class="block text-sm font-semibold text-slate-700 mb-2"
+            >
+              Match
+            </label>
+
+
+            <select
+              id="matchSelect"
+              class="w-full h-13 rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm text-slate-800 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10"
+            >
+
+              <option value="">
+                Choose a match
+              </option>
+
+              <option value="manchester-city-arsenal">
+                Manchester City vs Arsenal — Saturday, 7:00 PM
+              </option>
+
+              <option value="real-madrid-barcelona">
+                Real Madrid vs Barcelona — Sunday, 8:00 PM
+              </option>
+
+              <option value="bayern-psg">
+                Bayern Munich vs PSG — Tuesday, 8:00 PM
+              </option>
+
+              <option value="liverpool-chelsea">
+                Liverpool vs Chelsea — Wednesday, 7:30 PM
+              </option>
+
+              <option value="inter-juventus">
+                Inter Milan vs Juventus — Thursday, 8:00 PM
+              </option>
+
+              <option value="barcelona-atletico">
+                Barcelona vs Atletico Madrid — Friday, 9:00 PM
+              </option>
+
+            </select>
+
+
+            <p
+              class="mt-2 text-xs text-slate-400"
+            >
+              Choose the match you want to watch.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- Selected Center -->
+        <div
+          class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden"
+        >
+
+          <div
+            class="px-6 py-5 border-b border-slate-100 flex items-center justify-between"
+          >
+
+            <div>
+
+              <p
+                class="text-xs font-bold uppercase tracking-[0.18em] text-emerald-600"
+              >
+                Step 2
+              </p>
+
+              <h2
+                class="mt-1 text-xl font-black text-slate-950"
+              >
+                Choose Viewing Center
+              </h2>
+
+            </div>
+
+
+            <div
+              class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center"
+            >
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 21s7-5.25 7-11a7 7 0 1 0-14 0c0 5.75 7 11 7 11Z"
+                />
+
+                <circle
+                  cx="12"
+                  cy="10"
+                  r="2.2"
+                />
+
+              </svg>
+
+            </div>
+
+          </div>
+
+
+          <div class="p-6">
+
+            <div
+              id="centerOptions"
+              class="grid grid-cols-1 sm:grid-cols-2 gap-4"
+            >
+
+              <!-- Center option 1 -->
+              <label
+                class="center-option cursor-pointer"
+              >
+
+                <input
+                  type="radio"
+                  name="center"
+                  value="stadium-view"
+                  class="sr-only center-radio"
+                >
+
+                <div
+                  class="center-option-card rounded-xl border-2 border-slate-200 p-4 hover:border-emerald-400 hover:bg-emerald-50/40 transition"
+                >
+
+                  <div
+                    class="flex items-start justify-between gap-3"
+                  >
+
+                    <div>
+
+                      <h3
+                        class="font-bold text-slate-900"
+                      >
+                        Stadium View Center
+                      </h3>
+
+                      <p
+                        class="text-xs text-slate-500 mt-1"
+                      >
+                        Kano Municipal
+                      </p>
+
+                    </div>
+
+                    <span
+                      class="w-3 h-3 rounded-full bg-emerald-500 mt-1"
+                    ></span>
+
+                  </div>
+
+
+                  <div
+                    class="mt-4 flex items-center justify-between text-xs"
+                  >
+
+                    <span class="text-slate-400">
+                      Available
+                    </span>
+
+                    <span
+                      class="font-bold text-emerald-600"
+                    >
+                      42 seats
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </label>
+
+
+              <!-- Center option 2 -->
+              <label
+                class="center-option cursor-pointer"
+              >
+
+                <input
+                  type="radio"
+                  name="center"
+                  value="kano-sports-arena"
+                  class="sr-only center-radio"
+                >
+
+                <div
+                  class="center-option-card rounded-xl border-2 border-slate-200 p-4 hover:border-emerald-400 hover:bg-emerald-50/40 transition"
+                >
+
+                  <div
+                    class="flex items-start justify-between gap-3"
+                  >
+
+                    <div>
+
+                      <h3
+                        class="font-bold text-slate-900"
+                      >
+                        Kano Sports Arena
+                      </h3>
+
+                      <p
+                        class="text-xs text-slate-500 mt-1"
+                      >
+                        Nassarawa
+                      </p>
+
+                    </div>
+
+                    <span
+                      class="w-3 h-3 rounded-full bg-emerald-500 mt-1"
+                    ></span>
+
+                  </div>
+
+
+                  <div
+                    class="mt-4 flex items-center justify-between text-xs"
+                  >
+
+                    <span class="text-slate-400">
+                      Available
+                    </span>
+
+                    <span
+                      class="font-bold text-emerald-600"
+                    >
+                      87 seats
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </label>
+
+
+              <!-- Center option 3 -->
+              <label
+                class="center-option cursor-pointer"
+              >
+
+                <input
+                  type="radio"
+                  name="center"
+                  value="green-field"
+                  class="sr-only center-radio"
+                >
+
+                <div
+                  class="center-option-card rounded-xl border-2 border-slate-200 p-4 hover:border-emerald-400 hover:bg-emerald-50/40 transition"
+                >
+
+                  <div
+                    class="flex items-start justify-between gap-3"
+                  >
+
+                    <div>
+
+                      <h3
+                        class="font-bold text-slate-900"
+                      >
+                        Green Field Viewing Hub
+                      </h3>
+
+                      <p
+                        class="text-xs text-slate-500 mt-1"
+                      >
+                        Tarauni
+                      </p>
+
+                    </div>
+
+                    <span
+                      class="w-3 h-3 rounded-full bg-amber-400 mt-1"
+                    ></span>
+
+                  </div>
+
+
+                  <div
+                    class="mt-4 flex items-center justify-between text-xs"
+                  >
+
+                    <span class="text-slate-400">
+                      Available
+                    </span>
+
+                    <span
+                      class="font-bold text-amber-600"
+                    >
+                      14 seats
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </label>
+
+
+              <!-- Center option 4 -->
+              <label
+                class="center-option cursor-pointer"
+              >
+
+                <input
+                  type="radio"
+                  name="center"
+                  value="fans-zone"
+                  class="sr-only center-radio"
+                >
+
+                <div
+                  class="center-option-card rounded-xl border-2 border-slate-200 p-4 hover:border-emerald-400 hover:bg-emerald-50/40 transition"
+                >
+
+                  <div
+                    class="flex items-start justify-between gap-3"
+                  >
+
+                    <div>
+
+                      <h3
+                        class="font-bold text-slate-900"
+                      >
+                        Fans Zone Kano
+                      </h3>
+
+                      <p
+                        class="text-xs text-slate-500 mt-1"
+                      >
+                        Fagge
+                      </p>
+
+                    </div>
+
+                    <span
+                      class="w-3 h-3 rounded-full bg-red-500 mt-1"
+                    ></span>
+
+                  </div>
+
+
+                  <div
+                    class="mt-4 flex items-center justify-between text-xs"
+                  >
+
+                    <span class="text-slate-400">
+                      Available
+                    </span>
+
+                    <span
+                      class="font-bold text-red-600"
+                    >
+                      6 seats
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </label>
+
+
+              <!-- Center option 5 -->
+              <label
+                class="center-option cursor-pointer"
+              >
+
+                <input
+                  type="radio"
+                  name="center"
+                  value="gwale-match-house"
+                  class="sr-only center-radio"
+                >
+
+                <div
+                  class="center-option-card rounded-xl border-2 border-slate-200 p-4 hover:border-emerald-400 hover:bg-emerald-50/40 transition"
+                >
+
+                  <div
+                    class="flex items-start justify-between gap-3"
+                  >
+
+                    <div>
+
+                      <h3
+                        class="font-bold text-slate-900"
+                      >
+                        Gwale Match House
+                      </h3>
+
+                      <p
+                        class="text-xs text-slate-500 mt-1"
+                      >
+                        Gwale
+                      </p>
+
+                    </div>
+
+                    <span
+                      class="w-3 h-3 rounded-full bg-emerald-500 mt-1"
+                    ></span>
+
+                  </div>
+
+
+                  <div
+                    class="mt-4 flex items-center justify-between text-xs"
+                  >
+
+                    <span class="text-slate-400">
+                      Available
+                    </span>
+
+                    <span
+                      class="font-bold text-emerald-600"
+                    >
+                      31 seats
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </label>
+
+
+              <!-- Center option 6 -->
+              <label
+                class="center-option cursor-pointer"
+              >
+
+                <input
+                  type="radio"
+                  name="center"
+                  value="dala-football-lounge"
+                  class="sr-only center-radio"
+                >
+
+                <div
+                  class="center-option-card rounded-xl border-2 border-slate-200 p-4 hover:border-emerald-400 hover:bg-emerald-50/40 transition"
+                >
+
+                  <div
+                    class="flex items-start justify-between gap-3"
+                  >
+
+                    <div>
+
+                      <h3
+                        class="font-bold text-slate-900"
+                      >
+                        Dala Football Lounge
+                      </h3>
+
+                      <p
+                        class="text-xs text-slate-500 mt-1"
+                      >
+                        Dala
+                      </p>
+
+                    </div>
+
+                    <span
+                      class="w-3 h-3 rounded-full bg-emerald-500 mt-1"
+                    ></span>
+
+                  </div>
+
+
+                  <div
+                    class="mt-4 flex items-center justify-between text-xs"
+                  >
+
+                    <span class="text-slate-400">
+                      Available
+                    </span>
+
+                    <span
+                      class="font-bold text-emerald-600"
+                    >
+                      28 seats
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </label>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- Number of Seats -->
+        <div
+          class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden"
+        >
+
+          <div
+            class="px-6 py-5 border-b border-slate-100 flex items-center justify-between"
+          >
+
+            <div>
+
+              <p
+                class="text-xs font-bold uppercase tracking-[0.18em] text-emerald-600"
+              >
+                Step 3
+              </p>
+
+              <h2
+                class="mt-1 text-xl font-black text-slate-950"
+              >
+                Number of Seats
+              </h2>
+
+            </div>
+
+
+            <div
+              class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center"
+            >
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M16 11V7a4 4 0 0 0-8 0v4"
+                />
+
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 11h14l1 9H4l1-9Z"
+                />
+
+              </svg>
+
+            </div>
+
+          </div>
+
+
+          <div class="p-6">
+
+            <div
+              class="flex items-center justify-between rounded-2xl bg-slate-50 border border-slate-200 p-4"
+            >
+
+              <div>
+
+                <p
+                  class="font-bold text-slate-900"
+                >
+                  Seats to reserve
+                </p>
+
+                <p
+                  class="text-xs text-slate-500 mt-1"
+                >
+                  Maximum of 10 seats per booking
+                </p>
+
+              </div>
+
+
+              <div
+                class="flex items-center gap-3"
+              >
+
+                <button
+                  id="decreaseSeats"
+                  type="button"
+                  class="w-10 h-10 rounded-xl border border-slate-200 bg-white text-slate-700 font-bold hover:bg-slate-100 transition"
+                  aria-label="Decrease seats"
+                >
+                  −
+                </button>
+
+
+                <span
+                  id="seatCount"
+                  class="w-8 text-center text-xl font-black text-slate-950"
+                >
+                  1
+                </span>
+
+
+                <button
+                  id="increaseSeats"
+                  type="button"
+                  class="w-10 h-10 rounded-xl border border-slate-200 bg-white text-slate-700 font-bold hover:bg-slate-100 transition"
+                  aria-label="Increase seats"
+                >
+                  +
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- Contact Details -->
+        <div
+          class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden"
+        >
+
+          <div
+            class="px-6 py-5 border-b border-slate-100"
+          >
+
+            <p
+              class="text-xs font-bold uppercase tracking-[0.18em] text-emerald-600"
+            >
+              Step 4
+            </p>
+
+            <h2
+              class="mt-1 text-xl font-black text-slate-950"
+            >
+              Booking Information
+            </h2>
+
+          </div>
+
+
+          <div
+            class="p-6 grid grid-cols-1 sm:grid-cols-2 gap-5"
+          >
+
+            <div>
+
+              <label
+                for="fullName"
+                class="block text-sm font-semibold text-slate-700 mb-2"
+              >
+                Full Name
+              </label>
+
+              <input
+                id="fullName"
+                type="text"
+                placeholder="Enter your full name"
+                autocomplete="name"
+                class="w-full h-12 rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10"
+              >
+
+            </div>
+
+
+            <div>
+
+              <label
+                for="phone"
+                class="block text-sm font-semibold text-slate-700 mb-2"
+              >
+                Phone Number
+              </label>
+
+              <input
+                id="phone"
+                type="tel"
+                inputmode="tel"
+                placeholder="08012345678"
+                autocomplete="tel"
+                class="w-full h-12 rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10"
+              >
+
+            </div>
+
+
+            <div class="sm:col-span-2">
+
+              <label
+                for="email"
+                class="block text-sm font-semibold text-slate-700 mb-2"
+              >
+                Email Address
+              </label>
+
+              <input
+                id="email"
+                type="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+                class="w-full h-12 rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10"
+              >
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- Login Notice -->
+        <div
+          class="rounded-2xl border border-emerald-200 bg-emerald-50 p-5"
+        >
+
+          <div
+            class="flex items-start gap-4"
+          >
+
+            <div
+              class="w-10 h-10 flex-shrink-0 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center"
+            >
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 15v2"
+                />
+
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8 10V7a4 4 0 1 1 8 0v3"
+                />
+
+                <rect
+                  x="5"
+                  y="10"
+                  width="14"
+                  height="10"
+                  rx="2"
+                />
+
+              </svg>
+
+            </div>
+
+
+            <div>
+
+              <h3
+                class="font-bold text-emerald-900"
+              >
+                Account required to confirm booking
+              </h3>
+
+              <p
+                class="mt-1 text-sm text-emerald-800/80 leading-relaxed"
+              >
+                You can explore matches and viewing centers
+                without an account. When you confirm this
+                booking, you will be asked to sign in or create
+                an account.
+              </p>
+
+
+              <div
+                class="mt-4 flex flex-wrap gap-3"
+              >
+
+                <a
+                  href="login.html"
+                  class="px-4 py-2 rounded-lg bg-emerald-600 text-white text-sm font-bold hover:bg-emerald-700 transition"
+                >
+                  Sign In
+                </a>
+
+                <a
+                  href="register.html"
+                  class="px-4 py-2 rounded-lg border border-emerald-300 text-emerald-800 text-sm font-bold hover:bg-emerald-100 transition"
+                >
+                  Create Account
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           RIGHT / BOOKING SUMMARY
+      ================================================== -->
+
+      <aside
+        class="lg:col-span-1"
+      >
+
+        <div
+          class="lg:sticky lg:top-28"
+        >
+
+          <div
+            class="bg-slate-950 rounded-2xl overflow-hidden shadow-xl border border-slate-800"
+          >
+
+            <!-- Summary Header -->
+            <div
+              class="relative p-6 overflow-hidden"
+            >
+
+              <div
+                class="absolute -right-16 -top-16 w-40 h-40 rounded-full bg-emerald-500/20 blur-2xl"
+              ></div>
+
+
+              <div
+                class="relative z-10"
+              >
+
+                <p
+                  class="text-emerald-400 text-xs font-bold uppercase tracking-[0.18em]"
+                >
+                  Booking Summary
+                </p>
+
+                <h2
+                  class="mt-2 text-2xl font-black text-white"
+                >
+                  Your Matchday
+                </h2>
+
+              </div>
+
+            </div>
+
+
+            <!-- Match Summary -->
+            <div
+              class="px-6 pb-6"
+            >
+
+              <div
+                class="rounded-2xl border border-white/10 bg-white/5 p-5"
+              >
+
+                <div
+                  class="text-xs uppercase tracking-wider text-slate-500"
+                >
+                  Match
+                </div>
+
+                <div
+                  id="summaryMatch"
+                  class="mt-2 font-bold text-white leading-relaxed"
+                >
+                  Select a match
+                </div>
+
+
+                <div
+                  class="mt-4 pt-4 border-t border-white/10"
+                >
+
+                  <div
+                    class="text-xs uppercase tracking-wider text-slate-500"
+                  >
+                    Viewing Center
+                  </div>
+
+                  <div
+                    id="summaryCenter"
+                    class="mt-2 font-bold text-white"
+                  >
+                    Select a center
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <!-- Booking Details -->
+              <div
+                class="mt-5 space-y-4"
+              >
+
+                <div
+                  class="flex items-center justify-between text-sm"
+                >
+
+                  <span class="text-slate-400">
+                    Seats
+                  </span>
+
+                  <span
+                    id="summarySeats"
+                    class="font-bold text-white"
+                  >
+                    1
+                  </span>
+
+                </div>
+
+
+                <div
+                  class="flex items-center justify-between text-sm"
+                >
+
+                  <span class="text-slate-400">
+                    Booking fee
+                  </span>
+
+                  <span class="font-bold text-white">
+                    Free
+                  </span>
+
+                </div>
+
+
+                <div
+                  class="pt-4 border-t border-white/10 flex items-center justify-between"
+                >
+
+                  <span
+                    class="text-slate-300 font-semibold"
+                  >
+                    Total
+                  </span>
+
+                  <span
+                    class="text-2xl font-black text-emerald-400"
+                  >
+                    Free
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <!-- Error Message -->
+              <div
+                id="bookingError"
+                class="hidden mt-5 rounded-xl border border-red-500/20 bg-red-500/10 p-4 text-sm text-red-300"
+              ></div>
+
+
+              <!-- Confirm Button -->
+              <button
+                id="confirmBooking"
+                type="button"
+                class="animated-button w-full mt-6 px-5 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black"
+              >
+
+                Continue to Confirmation
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="inline-block w-5 h-5 ml-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M13 7l5 5m0 0-5 5m5-5H6"
+                  />
+
+                </svg>
+
+              </button>
+
+
+              <p
+                class="mt-4 text-center text-xs text-slate-500 leading-relaxed"
+              >
+                Your seat is not confirmed until the booking
+                process is completed.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- Help Card -->
+          <div
+            class="mt-5 rounded-2xl bg-white border border-slate-200 p-5"
+          >
+
+            <div
+              class="flex items-start gap-3"
+            >
+
+              <div
+                class="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600"
+              >
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                >
+
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="9"
+                  />
+
+                  <path
+                    stroke-linecap="round"
+                    d="M12 11v5"
+                  />
+
+                  <path
+                    stroke-linecap="round"
+                    d="M12 8h.01"
+                  />
+
+                </svg>
+
+              </div>
+
+
+              <div>
+
+                <h3
+                  class="font-bold text-slate-900"
+                >
+                  Need help?
+                </h3>
+
+                <p
+                  class="mt-1 text-xs text-slate-500 leading-relaxed"
+                >
+                  Choose a match and viewing center first.
+                  You can review your selection before confirming.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </aside>
+
+    </div>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer
+    class="bg-slate-950 border-t border-white/10"
+  >
+
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12"
+    >
+
+      <div
+        class="grid grid-cols-1 md:grid-cols-4 gap-10"
+      >
+
+        <!-- Brand -->
+        <div class="md:col-span-2">
+
+          <a
+            href="index.html"
+            class="inline-flex items-center gap-3"
+          >
+
+            <div
+              class="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-400/20 flex items-center justify-center overflow-hidden"
+            >
+
+              <img
+                src="https://icons.iconarchive.com/icons/pictogrammers/material/128/football-icon.png"
+                alt="Football View"
+                class="w-8 h-8 object-contain"
+              >
+
+            </div>
+
+
+            <div>
+
+              <div
+                class="text-white font-black tracking-[0.16em]"
+              >
+                FOOTBALL VIEW
+              </div>
+
+              <div
+                class="text-emerald-400 text-[10px] uppercase tracking-[0.25em] mt-1"
+              >
+                Kano State
+              </div>
+
+            </div>
+
+          </a>
+
+
+          <p
+            class="mt-5 max-w-md text-slate-400 leading-relaxed text-sm"
+          >
+            A digital platform designed to help football
+            supporters discover matches, find viewing centers
+            and plan better matchday experiences across Kano State.
+          </p>
+
+        </div>
+
+
+        <!-- Explore -->
+        <div>
+
+          <h3
+            class="text-white font-bold mb-4"
+          >
+            Explore
+          </h3>
+
+          <div class="space-y-3 text-sm">
+
+            <a
+              href="index.html"
+              class="block text-slate-400 hover:text-emerald-400 transition"
+            >
+              Home
+            </a>
+
+            <a
+              href="matches.html"
+              class="block text-slate-400 hover:text-emerald-400 transition"
+            >
+              Matches
+            </a>
+
+            <a
+              href="viewing-centers.html"
+              class="block text-slate-400 hover:text-emerald-400 transition"
+            >
+              Viewing Centers
+            </a>
+
+            <a
+              href="index.html#how-it-works"
+              class="block text-slate-400 hover:text-emerald-400 transition"
+            >
+              How It Works
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- Account -->
+        <div>
+
+          <h3
+            class="text-white font-bold mb-4"
+          >
+            Account
+          </h3>
+
+          <div class="space-y-3 text-sm">
+
+            <a
+              href="login.html"
+              class="block text-slate-400 hover:text-emerald-400 transition"
+            >
+              Sign In
+            </a>
+
+            <a
+              href="register.html"
+              class="block text-slate-400 hover:text-emerald-400 transition"
+            >
+              Create Account
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-xs text-slate-500"
+      >
+
+        <p>
+          © <span data-current-year>2026</span>
+          Football View. All rights reserved.
+        </p>
+
+        <p>
+          Bayero University, Kano. Final Year Project (SWE)
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =====================================================
+       BOOKING PAGE JAVASCRIPT
+  ====================================================== -->
+
+  <script>
+
+    /* ================================================
+       Demo Data
+    ================================================ */
+
+    const matches = {
+
+      "manchester-city-arsenal": {
+        name: "Manchester City vs Arsenal",
+        date: "Saturday, 7:00 PM"
+      },
+
+      "real-madrid-barcelona": {
+        name: "Real Madrid vs Barcelona",
+        date: "Sunday, 8:00 PM"
+      },
+
+      "bayern-psg": {
+        name: "Bayern Munich vs PSG",
+        date: "Tuesday, 8:00 PM"
+      },
+
+      "liverpool-chelsea": {
+        name: "Liverpool vs Chelsea",
+        date: "Wednesday, 7:30 PM"
+      },
+
+      "inter-juventus": {
+        name: "Inter Milan vs Juventus",
+        date: "Thursday, 8:00 PM"
+      },
+
+      "barcelona-atletico": {
+        name: "Barcelona vs Atletico Madrid",
+        date: "Friday, 9:00 PM"
+      }
+
+    };
+
+
+    const centers = {
+
+      "stadium-view": {
+        name: "Stadium View Center",
+        location: "Kano Municipal",
+        available: 42
+      },
+
+      "kano-sports-arena": {
+        name: "Kano Sports Arena",
+        location: "Nassarawa",
+        available: 87
+      },
+
+      "green-field": {
+        name: "Green Field Viewing Hub",
+        location: "Tarauni",
+        available: 14
+      },
+
+      "fans-zone": {
+        name: "Fans Zone Kano",
+        location: "Fagge",
+        available: 6
+      },
+
+      "gwale-match-house": {
+        name: "Gwale Match House",
+        location: "Gwale",
+        available: 31
+      },
+
+      "dala-football-lounge": {
+        name: "Dala Football Lounge",
+        location: "Dala",
+        available: 28
+      }
+
+    };
+
+
+    /* ================================================
+       URL Parameters
+    ================================================ */
+
+    const params =
+      new URLSearchParams(
+        window.location.search
+      );
+
+
+    const matchParam =
+      params.get("match");
+
+    const centerParam =
+      params.get("center");
+
+
+    /* ================================================
+       Elements
+    ================================================ */
+
+    const matchSelect =
+      document.getElementById(
+        "matchSelect"
+      );
+
+    const centerRadios =
+      document.querySelectorAll(
+        ".center-radio"
+      );
+
+    const summaryMatch =
+      document.getElementById(
+        "summaryMatch"
+      );
+
+    const summaryCenter =
+      document.getElementById(
+        "summaryCenter"
+      );
+
+    const summarySeats =
+      document.getElementById(
+        "summarySeats"
+      );
+
+    const seatCount =
+      document.getElementById(
+        "seatCount"
+      );
+
+    const decreaseSeats =
+      document.getElementById(
+        "decreaseSeats"
+      );
+
+    const increaseSeats =
+      document.getElementById(
+        "increaseSeats"
+      );
+
+    const confirmBooking =
+      document.getElementById(
+        "confirmBooking"
+      );
+
+    const bookingError =
+      document.getElementById(
+        "bookingError"
+      );
+
+
+    let seats = 1;
+
+
+    /* ================================================
+       Update Match Summary
+    ================================================ */
+
+    function updateMatchSummary() {
+
+      const matchId =
+        matchSelect.value;
+
+      if (!matchId) {
+
+        summaryMatch.textContent =
+          "Select a match";
+
+        return;
+
+      }
+
+
+      const match =
+        matches[matchId];
+
+      if (!match) return;
+
+
+      summaryMatch.innerHTML = `
+        ${match.name}
+        <span class="block mt-1 text-xs font-normal text-slate-400">
+          ${match.date}
+        </span>
+      `;
+
+    }
+
+
+    /* ================================================
+       Update Center Summary
+    ================================================ */
+
+    function updateCenterSummary() {
+
+      const selected =
+        document.querySelector(
+          ".center-radio:checked"
+        );
+
+
+      if (!selected) {
+
+        summaryCenter.textContent =
+          "Select a center";
+
+        return;
+
+      }
+
+
+      const center =
+        centers[selected.value];
+
+      if (!center) return;
+
+
+      summaryCenter.innerHTML = `
+        ${center.name}
+        <span class="block mt-1 text-xs font-normal text-slate-400">
+          ${center.location}
+        </span>
+      `;
+
+    }
+
+
+    /* ================================================
+       Center Selection Styling
+    ================================================ */
+
+    function updateCenterStyles() {
+
+      document
+        .querySelectorAll(
+          ".center-option-card"
+        )
+        .forEach((card) => {
+
+          card.classList.remove(
+            "border-emerald-500",
+            "bg-emerald-50"
+          );
+
+          card.classList.add(
+            "border-slate-200"
+          );
+
+        });
+
+
+      centerRadios.forEach((radio) => {
+
+        if (!radio.checked) return;
+
+
+        const card =
+          radio
+            .closest(".center-option")
+            .querySelector(
+              ".center-option-card"
+            );
+
+
+        card.classList.remove(
+          "border-slate-200"
+        );
+
+        card.classList.add(
+          "border-emerald-500",
+          "bg-emerald-50"
+        );
+
+      });
+
+    }
+
+
+    /* ================================================
+       Seat Counter
+    ================================================ */
+
+    function updateSeats() {
+
+      seatCount.textContent =
+        seats;
+
+      summarySeats.textContent =
+        seats;
+
+    }
+
+
+    if (decreaseSeats) {
+
+      decreaseSeats.addEventListener(
+        "click",
+        () => {
+
+          if (seats > 1) {
+
+            seats--;
+
+            updateSeats();
+
+          }
+
+        }
+      );
+
+    }
+
+
+    if (increaseSeats) {
+
+      increaseSeats.addEventListener(
+        "click",
+        () => {
+
+          if (seats < 10) {
+
+            seats++;
+
+            updateSeats();
+
+          }
+
+        }
+      );
+
+    }
+
+
+    /* ================================================
+       Match Change
+    ================================================ */
+
+    if (matchSelect) {
+
+      matchSelect.addEventListener(
+        "change",
+        updateMatchSummary
+      );
+
+    }
+
+
+    /* ================================================
+       Center Change
+    ================================================ */
+
+    centerRadios.forEach((radio) => {
+
+      radio.addEventListener(
+        "change",
+        () => {
+
+          updateCenterSummary();
+
+          updateCenterStyles();
+
+        }
+      );
+
+    });
+
+
+    /* ================================================
+       Read URL Parameters
+    ================================================ */
+
+    if (
+      matchParam &&
+      matches[matchParam]
+    ) {
+
+      matchSelect.value =
+        matchParam;
+
+      updateMatchSummary();
+
+    }
+
+
+    if (
+      centerParam &&
+      centers[centerParam]
+    ) {
+
+      const centerRadio =
+        document.querySelector(
+          `.center-radio[value="${centerParam}"]`
+        );
+
+
+      if (centerRadio) {
+
+        centerRadio.checked =
+          true;
+
+        updateCenterSummary();
+
+        updateCenterStyles();
+
+      }
+
+    }
+
+
+    /* ================================================
+       Confirm Booking
+    ================================================ */
+
+    if (confirmBooking) {
+
+      confirmBooking.addEventListener(
+        "click",
+        () => {
+
+          bookingError.classList.add(
+            "hidden"
+          );
+
+          bookingError.textContent =
+            "";
+
+
+          const selectedMatch =
+            matchSelect.value;
+
+          const selectedCenter =
+            document.querySelector(
+              ".center-radio:checked"
+            );
+
+
+          if (!selectedMatch) {
+
+            bookingError.textContent =
+              "Please select a match before continuing.";
+
+            bookingError.classList.remove(
+              "hidden"
+            );
+
+            matchSelect.focus();
+
+            return;
+
+          }
+
+
+          if (!selectedCenter) {
+
+            bookingError.textContent =
+              "Please select a viewing center before continuing.";
+
+            bookingError.classList.remove(
+              "hidden"
+            );
+
+            document
+              .getElementById(
+                "centerOptions"
+              )
+              .scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+              });
+
+            return;
+
+          }
+
+
+          const fullName =
+            document
+              .getElementById("fullName")
+              .value
+              .trim();
+
+          const phone =
+            document
+              .getElementById("phone")
+              .value
+              .trim();
+
+          const email =
+            document
+              .getElementById("email")
+              .value
+              .trim();
+
+
+          if (!fullName) {
+
+            bookingError.textContent =
+              "Please enter your full name.";
+
+            bookingError.classList.remove(
+              "hidden"
+            );
+
+            document
+              .getElementById("fullName")
+              .focus();
+
+            return;
+
+          }
+
+
+          if (!phone) {
+
+            bookingError.textContent =
+              "Please enter your phone number.";
+
+            bookingError.classList.remove(
+              "hidden"
+            );
+
+            document
+              .getElementById("phone")
+              .focus();
+
+            return;
+
+          }
+
+
+          if (!email) {
+
+            bookingError.textContent =
+              "Please enter your email address.";
+
+            bookingError.classList.remove(
+              "hidden"
+            );
+
+            document
+              .getElementById("email")
+              .focus();
+
+            return;
+
+          }
+
+
+          /*
+             Frontend-only stage.
+
+             Backend authentication and database
+             booking will be connected later.
+          */
+
+          const selectedMatchData =
+            matches[selectedMatch];
+
+          const selectedCenterData =
+            centers[selectedCenter.value];
+
+
+          sessionStorage.setItem(
+            "footballViewBooking",
+            JSON.stringify({
+              match: selectedMatchData,
+              center: selectedCenterData,
+              seats: seats,
+              customer: {
+                fullName: fullName,
+                phone: phone,
+                email: email
+              }
+            })
+          );
+
+
+          /*
+             For now, direct the user to login.
+             The PHP backend will later check authentication
+             and create the actual booking.
+          */
+
+          window.location.href =
+            "login.html?redirect=booking";
+
+        }
+      );
+
+    }
+
+
+    /* ================================================
+       Initial State
+    ================================================ */
+
+    updateSeats();
+
+    updateCenterStyles();
+
+  </script>
+
+
+  <!-- Shared JavaScript -->
+  <script
+    src="assets/js/app.js"
+  ></script>
+
+</body>
+</html>
